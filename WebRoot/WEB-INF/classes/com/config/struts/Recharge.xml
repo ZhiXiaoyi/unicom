@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<!-- 充值 -->
+	<package name="recharge" extends="struts-default" namespace="/recharge">
+		<!-- 跳转支付界面 -->
+		<action name="torecharge" class="com.web.action.RechargeAction"
+			method="recharge">
+			<result name="success">/WEB-INF/page/front/recharge/pay.jsp</result>
+			<result name="error">/WEB-INF/page/front/recharge/online_recharge.jsp
+			</result>
+		</action>
+		<!-- 跳转卡充值界面 -->
+		<action name="torechargeByCard" class="com.web.action.RechargeAction"
+			method="rechargeByCard">
+			<result name="success">/WEB-INF/page/front/recharge/pay.jsp</result>
+			<result name="error">/WEB-INF/page/front/recharge/prepaidCard_recharge.jsp
+			</result>
+		</action>
+		<!-- 返回充值界面 -->
+		<action name="returnOnlineRecharge" class="com.web.action.RechargeAction"
+			method="toreturn1">
+			<result name="success">/WEB-INF/page/front/recharge/online_recharge.jsp
+			</result>
+		</action>
+		<!-- 返回卡充值界面 -->
+		<action name="returnPrepaidCardRecharge" class="com.web.action.RechargeAction"
+			method="toreturn2">
+			<result name="success">/WEB-INF/page/front/recharge/prepaidCard_recharge.jsp
+			</result>
+		</action>
+		<!-- 跳转在线充值界面 -->
+		<action name="toonlineRecharge" class="com.web.action.RechargeAction"
+			method="onlineRecharge">
+			<result name="success">/WEB-INF/page/front/recharge/online_recharge.jsp
+			</result>
+		</action>
+		<!-- 跳转卡充值界面 -->
+		<action name="toPrepaidCardRecharge" class="com.web.action.RechargeAction"
+			method="prepaidCardRecharge">
+			<result name="success">/WEB-INF/page/front/recharge/prepaidCard_recharge.jsp
+			</result>
+			<result name="error">/WEB-INF/page/front/recharge/prepaidCard_recharge.jsp</result>
+		</action>
+		<!-- 跳转购买充值卡界面 -->
+		<action name="toBuyPrepaidCard" class="com.web.action.RechargeAction"
+			method="buyPrepaidCard">
+			<result name="success">/WEB-INF/page/front/recharge/buyPrepaidCard.jsp
+			</result>
+		</action>
+
+		<!--跳转查询记录界面 -->
+		<action name="toRechargeRecord" class="com.web.action.RechargeAction"
+			method="rechargeRecord">
+			<result name="success">/WEB-INF/page/front/recharge/recharge_record.jsp
+			</result>
+		</action>
+
+		<!-- 跳转话费查询界面 -->
+		<action name="tosearchCostbalance" class="com.web.action.RechargeAction"
+			method="tosearchCostbalance">
+			<result name="success">/WEB-INF/page/front/recharge/searchCostbalance.jsp
+			</result>
+		</action>
+		
+		<!-- 跳转话费充值界面-->
+		<action name="maintorecharge" class="com.web.action.RechargeAction"
+			method="mainTorecharge">
+			<result name="success">/WEB-INF/page/front/recharge/recharge.jsp
+			</result>
+		</action>
+		
+		<!-- iframe到frameset-->
+		<action name="iframeToFrameset" class="com.web.action.RechargeAction"
+			method="iframeToFrameset">
+			<result name="success">/WEB-INF/page/front/recharge/rechargeFrameset.jsp
+			</result>
+		</action>
+		
+		<!-- 右侧跳转在线充值界面-->
+		<action name="toOnline" class="com.web.action.RechargeAction"
+			method="toOnline">
+			<result name="success">/WEB-INF/page/front/recharge/online_recharge.jsp
+			</result>
+		</action>
+		
+		<!-- 菜单到购买充值卡充值-->
+		<action name="toBuyPrepaid" class="com.web.action.RechargeAction"
+			method="toBuyPrepaid">
+			<result name="success">/WEB-INF/page/front/recharge/buyPrepaidCard.jsp
+			</result>
+		</action>
+		
+		<!-- frameset到顶部-->
+		<action name="toup" class="com.web.action.RechargeAction"
+			method="toup">
+			<result name="success">/WEB-INF/page/front/recharge/recharge_up.jsp
+			</result>
+		</action>
+		
+		<!-- frameset到左-->
+		<action name="toleft" class="com.web.action.RechargeAction"
+			method="toleft">
+			<result name="success">/WEB-INF/page/front/recharge/recharge_middle_left.jsp
+			</result>
+		</action>
+		
+		<!-- frameset到右-->
+		<action name="toright" class="com.web.action.RechargeAction"
+			method="toright">
+			<result name="success">/WEB-INF/page/front/recharge/recharge_middle_right.jsp
+			</result>
+		</action>
+		<!-- frameset到底部-->
+		<action name="todown" class="com.web.action.RechargeAction"
+			method="todown">
+			<result name="success">/WEB-INF/page/front/recharge/recharge_down.jsp
+			</result>
+		</action>
+	</package>
+
+</struts>

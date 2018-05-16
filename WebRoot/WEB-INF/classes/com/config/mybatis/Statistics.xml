@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+ 
+ <mapper namespace="com.dao.StatisticsMapper">
+	<!-- 电子卡统计 -->
+	<select id="statisticsPrepaidcard" parameterType="com.model.pojo.StatisticalCondition" resultType="double">
+		select sum(facevalue) from TPrepaidCard where PREPAIDCARDSTATE='已售'
+			<if test="areaid!=null">and AREAID=#{areaid} </if>
+			<if test="startdate.length()!=0">and SALLTIME >= to_date(#{startdate},'yyyy-mm-dd')</if>
+			<if test="lastdate.length()!=0"> and SALLTIME &lt; to_date(#{lastdate},'yyyy-mm-dd')</if>
+	</select>
+	<!-- 充值记录统计 -->
+	<select id="statisticsTrechargerecord" parameterType="com.model.pojo.StatisticalCondition" resultType="double">
+		select sum(rechargemoney) from trechargerecord
+		<where>
+			<if test="areaid!=null">and AREAID=#{areaid} </if>
+			<if test="startdate.length()!=0">and RECHARGETIME >= to_date(#{startdate},'yyyy-mm-dd')</if>
+			<if test="lastdate.length()!=0"> and RECHARGETIME &lt; to_date(#{lastdate},'yyyy-mm-dd')</if>
+		</where> 
+	</select>
+	<!-- 电话卡销量统计 -->
+	<select id="statisticsOrders" parameterType="com.model.pojo.StatisticalCondition" resultType="double">
+		select sum(ORDERMONEY) from TORDERS where ORDERSTATE='已完成'
+		<if test="startdate.length()!=0">and PAYMENTTIME >= to_date(#{startdate},'yyyy-mm-dd')</if>
+		<if test="lastdate.length()!=0"> and PAYMENTTIME &lt;to_date(#{lastdate},'yyyy-mm-dd')</if>
+	</select>
+	<!-- 根据区名查询区ID -->
+	<select id="getAreaId" parameterType="java.lang.String" resultType="int">
+		select areaid from TAREA where AREANAME=#{areaName}
+	</select>
+	
+	<select id="getAreas" resultType="String">
+		select areaname from TAREA 
+	</select>
+
+
+
+</mapper>

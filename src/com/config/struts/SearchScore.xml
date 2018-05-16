@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<!-- 查询积分 -->
+	<package name="search" extends="struts-default" namespace="/search">
+		<action name="tosearch" class="com.web.action.SearchRemainingScoreAction"
+			method="searchScore">
+			<result name="success">
+				/WEB-INF/page/front/recharge/SearchIntegral.jsp
+			</result>
+			<result name="error">
+				/index.jsp
+			</result>
+		</action>
+
+	</package>
+
+</struts>

@@ -1,0 +1,94 @@
+/***common style***/
+body,html{
+    min-width: 1200px;
+    zoom: 1;
+}
+*{font-family:Arial, Helvetica, sans-serif;font-size:12px;font-weight:normal;line-height:1.4em;color:#333;margin:0;padding:0;list-style:none;text-decoration:none;}
+img{border:0;}
+.left{float:left;}
+.right{float:right;}
+.center980{margin:0 auto;}
+.contentBg {background: none repeat scroll 0 0 #FFFFFF;}
+.width980{width:1003px;margin:0 auto;}
+.clr {clear:both;}
+.dis{display:none;}
+.undis{display:block;}
+.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
+.clearfix{display:inline-table;}/* Hides from IE-mac \*/
+*html .clearfix{height:1%;}
+.clearfix{display:block;}/* End hide from IE-mac */
+*+html .clearfix{min-height:1%;}
+em {font-style:normal;}
+a:visited {text-decoration:none;}
+a:hover {color:#f60;text-decoration:underline;}
+/***common style end***/
+
+#bottom{
+    margin-top: 40px;
+    padding: 30px 0;
+    border-top:1px solid #fe7c04;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.helpLoad{
+    width: 1200px;
+    margin: 0 auto;
+}
+
+/***page bottom***/
+.serTopL,.serTopR,.serBotL,.serBotR{position:absolute;width:5px;height:5px;display:block;overflow:hidden;}
+.serviceH {position:relative;width:1200px;margin:0 auto;}
+
+/* .serviceTit {background:url(../images/bgGlobal.gif) 0px -178px repeat-x;width:100%;height:7px;margin:7px auto;} */
+.serviceDetarl {min-height:110px;height:110px;}
+.serviceDetarl dl {float:left;width:180px;margin:0 30px;_margin:0 30px;}
+.serviceDetarl dl  dt h2 {display:block;;width:130px;height:30px;line-height: 30px;color:#333333;font-size: 16px}
+.serviceDetarl dl  dd ,.serviceDetarl dl  dt{padding-left: 30px}
+.serviceDetarl dl  dd a {line-height:23px;color:#999;width:130px;display: block;font-size: 12px;}
+.serviceDetarl dl  dd a:hover {line-height:23px;color:#f60;}
+
+/*.serviceDetarl dl  .howTo { background: url("../images/howTo.png")  0px 2px no-repeat;}*/
+/*.serviceDetarl dl  .howPay {background: url("../images/howPay.png")  0px 2px no-repeat;}*/
+/*.serviceDetarl dl  .howSend {background: url("../images/howSend.png")  0px 2px no-repeat;}*/
+/*.serviceDetarl dl  .afterSales {background: url("../images/afterSales.png")  0px 2px no-repeat;}*/
+/*.serviceDetarl dl  .serPhone {background: url("../images/serPhone.png")  0px 2px no-repeat;}*/
+
+/***page bottom***/
+/*å‹æƒ…é“¾æŽ¥*/
+.links {height:86px;border:1px solid #ebebeb;background:#f8f8f8;}
+.links dt,.links dd {float:left}
+.links dt {width:22px;padding:2px 0;overflow:hidden;background:#c3c3c3;color:#fff;line-height:20px;margin:1px;text-align:center;border-right:3px solid #e8e8e8;margin-right:20px;}
+.links dd {width:930px;overflow:hidden;}
+.links a {height:16px;overflow:hidden;display:block;padding-left:20px;float:left;margin-right:8px;width:104px;_width:99px;margin-top:8px;}
+.links a.sina{background-position:0 0px}
+.links a.sohu{background-position:0 -16px}
+.links a.netEast{background-position:0 -36px}
+.links a.qq{background-position:0 -54px}
+.links a.msn{background-position:0 -72px}
+.links a.icbc{background-position:0 -90px}
+.links a.taobao{background-position:0 -108px}
+.links a.huicong{background-position:0 -126px}
+.links a.xinhua{background-position:0 -143px}
+.links a.ku6{background-position:0 -160px}
+.links a.xunlei{background-position:0 -178px}
+.links a.pplive{background-position:0 -196px}
+.links a.paopao{background-position:0 -214px}
+.links a.taipingy{background-position:0 -232px}
+.links a.shouji{background-position:0 -250px}
+.links a.zol{background-position:0 -268px}
+.links a.lxsk{background-position:0 -305px}
+.links a.wo{background-position:0 -288px}
+.links a.lifeSev{background-position:0 -320px}
+.links a.huaSh{background-position:0 -338px}
+.links a.woMusic{background-position:0 -357px}
+.links a.meizu {background-position: 0 -377px;}
+/***footer***/
+.flinks{color: #999;padding-top:10px; border-top:1px solid #e3e3e3;}
+#footer{padding:30px 0;text-align:center;}
+#footer .flinks a,#footer .flinks span{margin:0 10px;color: #999;}
+#footer .flinks span a{margin:0;}
+#footer .copyright{margin:10px 0;color: #999;line-height: 23px;}
+#footer .copyright a{
+    margin-right: 5px;
+}
+#footer .ilinks a{margin:0 5px;}
+/***footer end***/

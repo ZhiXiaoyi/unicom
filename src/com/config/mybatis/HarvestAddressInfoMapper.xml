@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.HarvestAddressInfoMapper">
+	
+    
+    <insert  id="addHarvestAddressInfo" parameterType="com.model.pojo.HarvestAddressInfo"  >
+		<selectKey keyProperty="harvestAddressInfoId" order="BEFORE" resultType="java.lang.Integer">
+			select harvestAddressInfo_seq.nextval as harvestAddressInfoId from dual
+		</selectKey>
+		insert into THarvestAddressInfo  values(
+		#{harvestAddressInfoId},
+		#{harvestName,jdbcType=VARCHAR},
+		#{harvestPhoneNumber,jdbcType=BIGINT},
+		#{harvestAddress,jdbcType=VARCHAR},
+		#{postCode,jdbcType=INTEGER}
+		)
+	</insert>
+	
+	
+	
+	<select id="findById" resultType="com.model.pojo.HarvestAddressInfo" parameterType="Integer" > 
+		select *  from THarvestAddressInfo where
+		harvestAddressInfoId=#{harvestAddressInfoId}
+	</select>
+	
+	
+	
+</mapper>

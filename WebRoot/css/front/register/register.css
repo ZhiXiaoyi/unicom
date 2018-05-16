@@ -1,0 +1,1106 @@
+@charset "utf-8";
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "微软雅黑"
+}
+
+html body {
+    font-size: 12px;
+    font-family: "微软雅黑";
+    font-family: Arial, Helvetica, sans-serif
+}
+
+body, ul, ol, li, p, h1, h2, h3, h4, h5, h6, form, fieldset, table, td, img, div, tr {
+    margin: 0;
+    padding: 0
+}
+
+ul, ol, li {
+    list-style-type: none
+}
+
+img {
+    border: none
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 16px;
+    font-family: "微软雅黑";
+    font-weight: normal
+}
+
+a:link, a:visited {
+    text-decoration: none
+}
+
+a:hover {
+    color: red;
+    text-decoration: none
+}
+
+.clear {
+    clear: both
+}
+
+.pointer {
+    cursor: pointer
+}
+
+input::-ms-clear {
+    display: none
+}
+
+input {
+    outline: none;
+    *border: 0
+}
+
+.container {
+    width: 980px;
+    height: auto;
+    margin: 0 auto
+}
+
+.logo {
+    width: 980px;
+    height: 70px;
+    margin-bottom: 30px
+}
+
+.main_box {
+    width: 980px;
+    height: 350px
+}
+
+.main {
+    width: 940px;
+    height: 350px;
+    float: left;
+    border-radius: 4px;
+    box-shadow: 0 0 4px #b0b0b0;
+    transition: border .2s linear 0s, box-shadow .2s linear 0s;
+    border: 1px solid #e6e6e6
+}
+
+.main_left {
+    width: 436px;
+    height: 350px;
+    padding-left: 90px;
+    float: left
+}
+
+.main_right {
+    width: 360px;
+    height: 350px;
+    float: left;
+    padding-left: 50px
+}
+
+.right1 {
+    width: 300px;
+    height: 50px
+}
+
+.right1 span.sty1 {
+    float: left;
+    font-size: 16px;
+    color: #5e5e5e;
+    line-height: 50px;
+    width: 120px;
+    height: 50px;
+    display: block
+}
+
+.right1 span.sty2 {
+    float: left;
+    font-size: 16px;
+    color: #5e5e5e;
+    line-height: 50px;
+    width: auto;
+    height: 50px;
+    display: block
+}
+
+.right1 span.sty2 a {
+    float: left;
+    color: #ccc;
+    line-height: 50px;
+    text-align: right;
+    width: auto;
+    height: 50px;
+    display: block;
+    cursor: pointer
+}
+
+.right1 a {
+    float: right;
+    color: #ff8200;
+    line-height: 50px;
+    text-align: right;
+    width: 120px;
+    height: 50px;
+    display: block;
+    cursor: pointer
+}
+
+.input_1 {
+    width: 300px;
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: url(../../../images/front/register/tip2.png) no-repeat right center
+}
+
+.input_2 {
+    width: 300px;
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: url(../../../images/front/register/tip3.png) no-repeat right center
+}
+
+.right2 {
+    width: 300px;
+    height: 35px
+}
+
+.right2 a {
+    line-height: 35px;
+    color: #ff8200;
+    text-align: right;
+    width: 120px;
+    height: 35px;
+    display: block;
+    float: right;
+    cursor: pointer
+}
+
+.right3 {
+    width: 300px;
+    height: 50px
+}
+
+.right3 p {
+    float: left;
+    line-height: 40px;
+    text-indent: 7px;
+    color: #ccc
+}
+
+.right3 a {
+    background: none repeat scroll 0 0 #fff;
+    border: 1px solid #fff;
+    line-height: 30px;
+    color: #ff8200;
+    text-align: right;
+    width: 87px;
+    height: 30px;
+    display: block;
+    float: right;
+    cursor: pointer
+}
+
+.right3 a:hover {
+    border: 1px solid #ff8200;
+    border-left-color: #fff !important
+}
+
+.ri01 {
+    margin: 5px 0;
+    position: relative;
+    z-index: 99
+}
+
+.right4 {
+    width: 300px;
+    height: 60px;
+    margin-top: 20px
+}
+
+.right4 p {
+    color: #a5a5a5;
+    height: 20px;
+    line-height: 20px
+}
+
+.right4 ul.otherLogin {
+    width: 300px;
+    height: 40px;
+    display: block;
+    margin: 0
+}
+
+.right4 ul li {
+    float: left;
+    height: 20px;
+    width: 20px;
+    display: block;
+    margin: 10px 10px 0 0
+}
+
+.fd {
+    width: 30px;
+    height: 100px;
+    float: left;
+    margin-top: 235px
+}
+
+.then {
+    width: 980px;
+    height: auto
+}
+
+.then p {
+    color: #a5a5a5;
+    line-height: 30px;
+    width: 100px;
+    height: 30px;
+    display: block;
+    text-indent: 30px;
+    background: url(../../../images/front/register/tip.png) no-repeat left;
+    margin: 10px 0 0 10px
+}
+
+.then p a {
+    color: #a5a5a5
+}
+
+.then p a:hover {
+    color: #ff8200;
+    text-decoration: none
+}
+
+.foot {
+    width: 980px;
+    height: auto;
+    padding: 30px 0 30px 0
+}
+
+.foot p {
+    color: #a5a5a5;
+    font-size: 12px;
+    font-family: "微软雅黑";
+    text-align: center;
+    line-height: 30px
+}
+
+.foot p a {
+    cursor: pointer
+}
+
+.foot p a:hover {
+    color: #ff8200
+}
+
+.cursor {
+    cursor: pointer;
+    color: #999
+}
+
+.boxStyle {
+    border: 1px solid #b4b4b4;
+    border-radius: 3px;
+    background-color: #f4f6f8
+}
+
+.selType {
+    position: absolute;
+    font-size: 14px;
+    margin-top: -2px
+}
+
+.selType li {
+    padding-left: 10px;
+    height: 30px;
+    line-height: 30px
+}
+
+.selType li label {
+    float: left
+}
+
+.hover {
+    background-color: #e6e6e6
+}
+
+.zindex999 {
+    z-index: 999
+}
+
+.selectType {
+    background: none repeat scroll 0 0 #fff;
+    position: absolute;
+    margin-left: 0;
+    *margin-left: -132px;
+    margin-top: 40px;
+    z-index: 999999;
+    border: 0 solid #b4b4b4;
+    width: 130px
+}
+
+.suggestcity {
+    background: none repeat scroll 0 0 #fff;
+    position: absolute;
+    margin-left: 149px;
+    *margin-left: 44px;
+    margin-top: 40px;
+    z-index: 999999;
+    border: 0 solid #b4b4b4;
+    width: 150px
+}
+
+.suggestcity ul:after {
+    clear: both;
+    content: " ";
+    visibility: hidden;
+    display: block;
+    height: 0
+}
+
+.suggestcity ul {
+}
+
+.suggestcity ul li {
+    float: left;
+    height: 30px;
+    line-height: 24px;
+    overflow: hidden;
+    text-align: left;
+    vertical-align: middle;
+    width: 100%;
+    cursor: pointer
+}
+
+.ac {
+    overflow: hidden
+}
+
+.ac a {
+    color: #333;
+    text-decoration: none;
+    font-size: 12px;
+    width: 100%;
+    margin-left: 5px
+}
+
+.ac_over {
+    float: left;
+    height: 24px;
+    line-height: 24px;
+    overflow: hidden;
+    text-align: left;
+    vertical-align: middle;
+    width: 100%;
+    background-color: #39f
+}
+
+.ac_over a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 800;
+    width: 100%;
+    margin-left: 5px
+}
+
+.acResultTip {
+    font-size: 12px;
+    line-height: 12px;
+    padding: 10px 5px 10px 5px;
+    color: #f57421
+}
+
+.inputlabel {
+    color: #f57421
+}
+
+.nonedisplay {
+    display: none
+}
+
+.btn {
+    width: 300px;
+    height: 40px;
+    color: #fff;
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-image: none;
+    border-radius: 4px;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, .2) inset, 0 1px 2px rgba(0, 0, 0, .05);
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    line-height: 35px;
+    margin-bottom: 0;
+    text-align: center;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, .75);
+    vertical-align: middle
+}
+
+.btn-success {
+    background-color: #feae00;
+    background-image: linear-gradient(to bottom, #feae00, #ff8200);
+    background-repeat: repeat-x;
+    border-color: rgba(0, 0, 0, .1) rgba(0, 0, 0, .1) rgba(0, 0, 0, .25);
+    color: #fff;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, .25)
+}
+
+.btn-success_g {
+    background-color: #ccc;
+    background-image: linear-gradient(to bottom, #ccc, #a5a5a5);
+    background-repeat: repeat-x;
+    border-color: rgba(0, 0, 0, .1) rgba(0, 0, 0, .1) rgba(0, 0, 0, .25);
+    color: #fff;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, .25)
+}
+
+.btn-success:hover {
+    background-color: #ff8200;
+    color: #fff
+}
+
+.btn-success_g:hover {
+    background-color: #a5a5a5;
+    color: #fff
+}
+
+.btn:hover {
+    background-position: 0 -15px;
+    color: #fff;
+    text-decoration: none;
+    transition: background-position .1s linear 0s
+}
+
+.usenameError {
+    background: url(../../../images/front/register/error.png) no-repeat left center;
+    height: 22px;
+    line-height: 22px;
+    padding-left: 16px;
+    font-weight: bold;
+    color: #c90000
+}
+
+.usenameErrorOK {
+    background: url(../../../images/front/register/icon_errorMessageOK.png) no-repeat left center;
+    height: 22px;
+    line-height: 22px;
+    padding-left: 16px;
+    font-weight: bold;
+    color: #f20000
+}
+
+.input_phone {
+    width: 300px;
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 5px
+}
+
+.right2 img {
+    height: 18px;
+    margin-bottom: 0;
+    vertical-align: text-bottom;
+    width: 18px
+}
+
+.right2 span {
+    color: #ff8200;
+    line-height: 35px;
+    margin-left: 5px
+}
+
+.input_3 {
+    width: 180px;
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    float: left
+}
+
+.input_4 {
+    width: 130px;
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    float: left;
+    background: url(../../../images/front/register/yz_03.png) no-repeat right center
+}
+
+.input_5 {
+    width: 150px;
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    float: right;
+    margin-right: -2px
+}
+
+.main ul li span {
+    font-size: 16px;
+    color: #587403;
+    font-weight: bold;
+    float: left
+}
+
+.main ul li {
+    font-size: 14px;
+    color: #a5a5a5;
+    line-height: 30px
+}
+
+.main ul {
+    width: 800px;
+    margin: 20px
+}
+
+.main ul li ol {
+    font-size: 16px;
+    color: #5e5e5e;
+    font-weight: bold
+}
+
+.main ul li h1 {
+    font-size: 14px;
+    color: #5e5e5e
+}
+
+.check {
+    width: 15px;
+    height: 15px;
+    margin: 6px 4px;
+    vertical-align: bottom
+}
+
+.txt_area {
+    width: 450px;
+    height: 100px;
+    resize: none;
+    color: #a5a5a5;
+    font-size: 12px;
+    padding: 4px
+}
+
+.infobox {
+    width: 100%;
+    height: 230px;
+    margin: 0 auto
+}
+
+.ad {
+    width: 980px;
+    overflow: hidden;
+    margin: 10px 0
+}
+
+.infobox > .no1 {
+    width: 400px;
+    height: 40px;
+    margin: 0 auto;
+    font-size: 28px;
+    font-weight: bold;
+    line-height: 40px;
+    color: #5e5e5e
+}
+
+.infobox > .no1 img {
+    width: 40px;
+    height: 40px;
+    vertical-align: middle;
+    margin: 0 15px 2px 0
+}
+
+.infobox > .no2 {
+    width: 400px;
+    height: 40px;
+    font-size: 12px;
+    color: #a5a5a5;
+    margin: 0 auto;
+    text-indent: 55px;
+    line-height: 40px
+}
+
+.infobox > .no2 span {
+    color: #ff8200
+}
+
+.infobox > .no3 {
+    width: 400px;
+    height: 40px;
+    font-size: 12px;
+    color: #a5a5a5;
+    margin: 0 auto;
+    margin-top: 15px
+}
+
+.infobox > .no3 a {
+    margin-left: 22px
+}
+
+.infobox > .no4 {
+    width: 800px;
+    height: 40px;
+    margin: 0 auto;
+    font-size: 12px;
+    color: #a5a5a5;
+    text-indent: 140px;
+    line-height: 40px
+}
+
+.xy_txt {
+    width: 580px;
+    height: 360px;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center
+}
+
+.xy_txt > .no1 {
+    font-size: 14px;
+    color: #ff8200;
+    margin-top: 10px;
+    height: 30px
+}
+
+.xy_txt > .no2 {
+    width: 540px;
+    height: 240px;
+    margin: 0 auto;
+    OVERFLOW-Y: auto;
+    OVERFLOW-X: hidden;
+    padding: 5px;
+    color: #a5a5a5;
+    font-size: 12px;
+    font-family: 微软雅黑;
+    line-height: 24px;
+    border: 1px solid #ccc;
+    text-align: left;
+    text-indent: 20px
+}
+
+.xy_txt > .no3 {
+    margin-top: 10px
+}
+
+.login {
+    border: 1px solid #ff8200;
+    border-radius: 5px;
+    width: 330px;
+    height: 350px
+}
+
+.login > .boxs {
+    width: 310px;
+    height: 100%;
+    margin: 0 auto
+}
+
+.register {
+    width: 590px;
+    margin: 0 auto
+}
+
+.register > .no1 {
+    width: 100%;
+    height: 31px
+}
+
+.register > .no1 > .fl {
+    width: 295px;
+    height: 31px;
+    background-image: url(../../../images/front/register/img_03.png);
+    font-size: 14px;
+    text-align: center;
+    line-height: 31px;
+    color: #fff;
+    font-family: 微软雅黑;
+    font-weight: bold;
+    float: left
+}
+
+.register > .no1 > .fr {
+    width: 295px;
+    height: 31px;
+    background-image: url(../../../images/front/register/img_04.png);
+    font-size: 14px;
+    text-align: center;
+    line-height: 31px;
+    color: #fff;
+    font-family: 微软雅黑;
+    font-weight: bold;
+    float: right
+}
+
+.register > .no2 {
+    width: 100%;
+    height: 410px;
+    border: 1px solid #ff8200;
+    border-radius: 5px;
+    margin-top: 10px
+}
+
+.register_no2 {
+    width: 238px;
+    height: 216px;
+    border: 1px solid #ff8200;
+    border-radius: 5px
+}
+
+.cont {
+    width: 300px;
+    height: 600px;
+    margin: 0 auto
+}
+
+.right2 p {
+    font-size: 12px;
+    color: #a5a5a5;
+    line-height: 35px
+}
+
+.ydxy_txt a {
+    color: #ff8200;
+    line-height: 24px
+}
+
+.tchu01 {
+    position: absolute;
+    margin-top: -42px;
+    width: 210px;
+    height: 77px;
+    border: 1px solid #ff8200;
+    background: #fff
+}
+
+.tchu01 a {
+    border: none !important;
+    color: #fff;
+    text-align: center;
+    width: 194px;
+    height: 29px;
+    margin: 5px 7px;
+    display: block;
+    font-size: 12px;
+    line-height: 29px;
+    font-family: "微软雅黑";
+    background: url(../../../images/front/register/ti01_bg.jpg) no-repeat
+}
+
+.tchu01 a:hover {
+    border: 0 !important;
+    text-decoration: underline
+}
+
+.login_tchu01 {
+    position: absolute;
+    padding: 10px 0;
+    width: 210px;
+    height: 73px;
+    border: 1px solid #ff8200;
+    background: #fff
+}
+
+.login_tchu01 a {
+    border: none !important;
+    color: #fff;
+    text-align: center;
+    width: 194px;
+    height: 29px;
+    margin: 5px 7px;
+    display: block;
+    font-size: 12px;
+    line-height: 29px;
+    font-family: "微软雅黑";
+    background: url(../../../images/front/register/ti01_bg.jpg) no-repeat
+}
+
+.login_tchu01 a:hover {
+    border: 0 !important;
+    text-decoration: underline
+}
+
+.getCode_step1 {
+    width: 978px;
+    height: 350px;
+    margin: 0 auto;
+    border: 1px solid #ff8200;
+    border-radius: 4px
+}
+
+.getCode_step1_tit {
+    font-size: 14px;
+    color: #ff8200;
+    font-weight: bold;
+    line-height: 200%;
+    padding-left: 10px
+}
+
+.getCodeProgress {
+    position: relative;
+    height: 39px;
+    margin: 20px 0 0 70px
+}
+
+.getCodeProgress li {
+    position: absolute;
+    background: url(../../../images/front/register/getCode_bg2.png);
+    width: 159px;
+    height: 39px;
+    line-height: 39px;
+    padding-left: 60px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold
+}
+
+.getCodeProgress li.getCodeProgress_li1 {
+    left: 0
+}
+
+.getCodeProgress li.getCodeProgress_li2 {
+    left: 207px
+}
+
+.getCodeProgress li.getCodeProgress_li3 {
+    left: 414px
+}
+
+.getCodeProgress li.getCodeProgress_li4 {
+    left: 621px
+}
+
+.getCodeProgress li.getCodeProgress_li_on {
+    background: url(../../../images/front/register/getCode_bg1.png)
+}
+
+.changeSecurityCode {
+    float: right;
+    line-height: 40px;
+    margin-left: 10px
+}
+
+.nextStep_btn {
+    display: block;
+    width: 100px;
+    height: 30px;
+    margin: 30px auto 0;
+    line-height: 30px;
+    text-align: center
+}
+
+.getRandomCode {
+    font-size: 12px;
+    line-height: 200%;
+    text-align: center;
+    margin-top: 30px;
+    color: #999
+}
+
+.getRandomCode a {
+    font-size: 14px;
+    padding-right: 10px;
+    color: #333
+}
+
+.getRandomCode a:hover {
+    text-decoration: underline
+}
+
+.getCodeAgain_btn {
+    float: right;
+    width: 80px;
+    height: 30px;
+    line-height: 30px;
+    margin-top: 5px;
+    background: #999
+}
+
+.getCodeAgain_btn:hover {
+    background: #666
+}
+
+.yourEmail, .loginEmail, .getCodeSuccess {
+    font-size: 14px;
+    line-height: 200%;
+    margin: 60px 0 0 340px;
+    color: #666
+}
+
+.loginEmail {
+    margin-top: 0
+}
+
+.loginEmail_btn {
+    width: 80px;
+    height: 30px;
+    line-height: 30px
+}
+
+.sendEmailAgain_btn {
+    font-size: 12px
+}
+
+.sendEmailAgain_btn a {
+    color: #ff8200
+}
+
+.sendEmailAgain_btn a:hover {
+    text-decoration: underline
+}
+
+.getCodeSuccess {
+    background: url(../../../images/front/register/getCodeSuccess.png) no-repeat;
+    padding: 20px 0 0 60px;
+    color: #333
+}
+
+.twoBtn {
+    margin: 30px 0 0 390px
+}
+
+.loginNow {
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    float: left
+}
+
+.goHome {
+    margin: 0 0 0 10px;
+    line-height: 30px;
+    color: #ff8200
+}
+
+.goHome:hover {
+    text-decoration: underline
+}
+
+fieldset {
+    border: 0
+}
+
+.formTitle {
+    display: none
+}
+
+.setCode {
+    width: 329px;
+    height: 39px;
+    margin-left: 270px
+}
+
+.setCode label {
+    font-size: 14px;
+    color: #333;
+    float: left;
+    line-height: 37px
+}
+
+.setCode input {
+    float: right;
+    width: 250px;
+    height: 35px;
+    border: 1px solid #999;
+    padding-left: 5px
+}
+
+.setCodeNotice {
+    margin-left: 350px;
+    line-height: 200%
+}
+
+.subBtn {
+    width: 90px;
+    height: 30px;
+    margin: 20px 420px
+}
+
+.broadBand {
+    line-height: 200%;
+    margin: 40px 0 0 210px;
+    padding: 50px 0 0 140px;
+    height: 133px;
+    font-size: 14px;
+    background: url(../../../images/front/register/broadBand_pic.png) no-repeat
+}
+
+.otherID_container {
+    width: 590px;
+    height: 400px;
+    font-family: "微软雅黑";
+    margin: 0 auto
+}
+
+.otherID_container input, .otherID_container select {
+    font-family: "微软雅黑"
+}
+
+.left1 {
+    width: 350px;
+    height: 30px;
+    margin-bottom: 15px
+}
+
+.left1 h1 {
+    width: 180px;
+    height: 30px;
+    display: block;
+    line-height: 30px;
+    font-size: 22px;
+    color: #000;
+    float: left
+}
+
+.left1 p {
+    width: 120px;
+    height: 30px;
+    display: block;
+    line-height: 30px;
+    font-size: 14px;
+    color: #ff8200;
+    float: right;
+    text-align: right;
+    font-weight: 700
+}
+
+.left2 {
+    width: 350px;
+    height: 40px;
+    margin-bottom: 20px
+}
+
+.usual {
+    width: 85px;
+    height: 40px;
+    line-height: 40px;
+    color: #8c8d91;
+    font-size: 14px;
+    float: left
+}
+
+.left2 p {
+    width: 65px;
+    height: 40px;
+    line-height: 40px;
+    color: #ff8200;
+    text-align: center
+}
+
+.left3 {
+    width: 350px;
+    height: 40px
+}
+
+.other_right {
+    width: 30px;
+    height: 100px;
+    float: left;
+    padding-top: 288px
+}

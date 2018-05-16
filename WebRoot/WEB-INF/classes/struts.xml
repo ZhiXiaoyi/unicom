@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<struts>
+	<!-- 这些action需要由spring进行管理 -->
+	<constant name="struts.objectFactory.spring.autoWire.alwaysRespect"
+		value="true" />
+	<!-- 客户端拦截器的配置  
+	<include file="com/config/struts/UserInterceptor.xml"></include>-->
+	<!-- 验证码的配置 -->
+	<include file="com/config/struts/VerificationCode.xml"></include>
+	<!-- 管理员登录的配置 -->
+	<include file="com/config/struts/AdminLogin.xml"></include>
+	<!-- 用户登录的配置 -->
+	<include file="com/config/struts/UserLogin.xml"></include>
+	<!-- 用户注册的配置 -->
+	<include file="com/config/struts/UserRegister.xml"></include>
+	<!-- 数组字典的配置 -->
+	<include file="com/config/struts/Dictionary.xml"></include>
+	<!-- 营业统计配置 -->
+	<include file="com/config/struts/statistics.xml"></include>
+	<!-- 角色管理的配置 -->
+	<include file="com/config/struts/Role.xml"></include>
+	<!-- 充值管理的配置 -->
+	<include file="com/config/struts/Recharge.xml"></include>
+	<!-- 用户管理的配置 -->
+	<include file="com/config/struts/Admin.xml"></include>
+	<!-- 套餐业务更换申请 -->
+	<include file="com/config/struts/ApplicationForm.xml"></include>
+	<!-- 上传商品的配置 -->
+	<include file="com/config/struts/Commodity.xml"></include>
+	<!-- 查询积分的配置 -->
+	<include file="com/config/struts/SearchScore.xml"></include>
+	<include file="com/config/struts/Iframes.xml"></include>
+	<!--购买充值卡的配置 -->
+	<include file="com/config/struts/BuyPrepaidCard.xml"></include>
+	<!-- 商品订单的配置 -->
+	<include file="com/config/struts/Order.xml"></include>
+	<!-- 积分商城的配置 -->
+	<include file="com/config/struts/Store.xml"></include>
+	<!-- 区域管理 -->
+	<include file="com/config/struts/AreaAdmin.xml"></include>
+	<!-- 查询余额的配置 -->
+	<include file="com/config/struts/SearchCostbalance.xml"></include>
+	<!-- 百度地图的配置 -->
+	<include file="com/config/struts/Map.xml"></include>
+	<!-- 日志的配置 -->
+	<include file="com/config/struts/Log.xml"></include>
+
+
+</struts>

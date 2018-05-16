@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+	<package name="role" namespace="/role" extends="struts-default">
+		<action name="topage" class="com.web.action.RoleAction" method="toPage">	
+	        <result name="success">
+				/WEB-INF/page/back/role/roleIndex.jsp
+            </result>    
+		</action>	
+		<action name="toaddpage" class="com.web.action.RoleAction" method="toAddPage">	
+	        <result name="success">
+				/WEB-INF/page/back/role/addRole.jsp
+            </result>    
+		</action>	
+		<action name="toeditpage" class="com.web.action.RoleAction" method="toEditPage">	
+	        <result name="success">
+				/WEB-INF/page/back/role/editRole.jsp
+            </result>    
+		</action>	
+		<action name="addrole" class="com.web.action.RoleAction" method="addRole">	
+	         <result name="success" type="redirectAction">
+				<param name="actionName">topage</param>
+				<param name="method">toPage</param>
+           </result>
+		</action>	
+		<action name="editrole" class="com.web.action.RoleAction" method="editRole">	
+	         <result name="success" type="redirectAction">
+				<param name="actionName">topage</param>
+				<param name="method">toPage</param>
+           </result>
+		</action>	
+	</package>
+
+</struts>

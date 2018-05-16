@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="createImage" namespace="/login" extends="struts-default">
+		<!--生成验证码 -->
+		<action name="createImage" class="com.web.action.CreateImageAction" method="execute">
+			<!--使用stream类型的result -->
+			<result name="success" type="stream">
+				<!--指定输出的内容 -->
+				<param name="inputName">imageStream</param>
+			</result>
+		</action>
+	</package>
+
+</struts>

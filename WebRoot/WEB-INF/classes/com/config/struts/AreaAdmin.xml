@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+    
+<struts>
+	<!-- 解决乱码 -->
+	<constant name="struts.i18n.encoding" value="UTF-8"></constant>
+  	<package name="area" namespace="/area" extends="struts-default,json-default">
+  		<action name="toAreaAdministrate" class="com.web.action.AreaAdministrate" method="excute">
+			<result name="success">
+				/WEB-INF/page/back/AreaAdministrate/AreaAdministrate.jsp
+			</result>  			
+  		</action>
+  		<action name="toAreaEditor" class="com.web.action.AreaAdministrate" method="toEditor">
+  			<result name="success">
+  				/WEB-INF/page/back/AreaAdministrate/EditorAndInsertArea.jsp
+  			</result>
+  		</action>
+  		<action name="passEditor" class="com.web.action.AreaAdministrate" method="toPassEditor">
+  			<result name="success" type="json">
+  				<param name="root">json</param>
+  			</result>
+  		</action>
+  		<action name="toPassInsert" class="com.web.action.AreaAdministrate" method="toPassInsert">
+  			<result name="success" type="json">
+  				<param name="root">json</param>
+  			</result>
+  		</action> 		
+  	</package>
+
+</struts>

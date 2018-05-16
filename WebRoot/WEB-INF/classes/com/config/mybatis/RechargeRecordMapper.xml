@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.RechargeRecordMapper">
+
+	<insert id="insertRecord" parameterType="com.model.pojo.RechargeRecord">
+	<selectKey keyProperty="rechargeRecordId" order="BEFORE" resultType="java.lang.Integer">
+	select seqRechargeRecordId.nextval from dual
+	</selectKey>
+		INSERT INTO
+		TRechargeRecord
+		VALUES
+		(#{rechargeRecordId},
+		#{userId,jdbcType=INTEGER},#{areaId,jdbcType=INTEGER},#{rechargePhoneNumber,jdbcType=INTEGER},#{rechargeMoney},
+		#{addIntegral},#{rechargeTime})
+	</insert>
+
+	<!-- 查询记录表中增加的积分 -->
+	<select id="findAllAddIntegral" parameterType="java.lang.Long" resultType="java.lang.Integer">
+		select sum(addIntegral)
+		from TRechargeRecord where rechargePhoneNumber=#{rechargePhoneNumber}
+
+	</select>
+</mapper>

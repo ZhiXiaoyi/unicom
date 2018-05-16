@@ -1,0 +1,131 @@
+* { font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: normal; padding: 0; margin: 0; }
+
+html { font-size: 12px; font-family: Arial, Helvetica, sans-serif; }
+
+.center1200 { width: 1200px; margin: 0 auto; }
+
+#shortcut { height: 32px; line-height: 32px; background: #f4f3f3; font-size: 12px; }
+#shortcut .login { height: 32px; line-height: 32px; float: left; }
+#shortcut .login a { color: #fd0000; }
+#shortcut .login .score { color: #fd0000; }
+#shortcut .login .s-loading { display: inline-block; vertical-align: middle; width: 20px; height: 20px; }
+#shortcut .rightNav { height: 32px; line-height: 32px; float: right; position: relative; z-index: 20; }
+#shortcut .rightNav > li { position: relative; z-index: 10; color: #54565b; width: 90px; padding: 1px 1px 0px 11px; background: none; margin-right: 0; height: 30px; float: left; text-align: center; cursor: pointer; }
+#shortcut .rightNav > li dl { width: 80px; border: 1px solid transparent; float: left; }
+#shortcut .rightNav > li dl dt { height: 27px; line-height: 27px; }
+#shortcut .rightNav > li dl dt img { height: 12px; width: 12px; vertical-align: middle; margin-left: 5px; }
+#shortcut .rightNav > li dl dd { line-height: 27px; }
+#shortcut .rightNav > li dl dd ul li { line-height: 27px; }
+#shortcut .rightNav > li dl dd ul li a { color: #333; text-decoration: none; }
+#shortcut .rightNav > li dl dd ul li b { height: 14px; width: 14px; vertical-align: middle; margin-left: 5px; display: inline-block; }
+#shortcut .rightNav > li span { font-size: 16px; float: left; margin-top: 3px; color: #cccccc; line-height: 1.4em; }
+#shortcut .rightNav .share { width: 135px; }
+#shortcut .rightNav .share dl { width: 128px; border: 1px solid transparent; float: left; }
+#shortcut .rightNav .share dl dt { height: 27px; line-height: 27px; }
+#shortcut .rightNav .share dl dt img { height: 12px; width: 12px; vertical-align: middle; margin-left: 5px; }
+#shortcut .rightNav .share dl dt .weixin { height: 20px; width: 23px; vertical-align: middle; margin-right: 5px; }
+#shortcut .rightNav .share dl dd { line-height: 27px; }
+#shortcut .rightNav .share dl dd img { display: block; width: 100px; height: 100px; margin: 10px auto; }
+#shortcut .rightNav .download { width: 145px; }
+#shortcut .rightNav .download dl { width: 138px; border: 1px solid transparent; position: relative; }
+#shortcut .rightNav .download dl dt { height: 27px; line-height: 27px; background-image: url("../images/download.png"); background-repeat: no-repeat; background-position: 4px -24px; *position: relative; *z-index: 0; *background-color: #fff; }
+#shortcut .rightNav .download dl dt img { height: 12px; width: 12px; vertical-align: middle; margin-left: 5px; }
+#shortcut .rightNav .download dl .downloadBg { background-position: 4px 3px; }
+#shortcut .rightNav .download dl dd { position: absolute; width: 213px; height: 127px; background: url("../images/download-img.jpg") no-repeat; top: 26px; right: -1px; border: 1px solid #ccc; z-index: -1; }
+#shortcut .rightNav .download dl dd a { display: block; position: absolute; width: 95px; height: 30px; right: 2px; }
+#shortcut .rightNav .download dl dd .d-androd { top: 53px; }
+#shortcut .rightNav .download dl dd .d-ios { top: 13px; }
+#shortcut .rightNav .rightBorder { border-right: 1px solid #ccc; }
+
+#header { height: 100px; }
+#header .logo { width: 279px; float: left; }
+#header .logo .logoImg { display: block; margin-top: 15px; }
+#header .searchForm { font-size: 12px; margin: 20px 0 0 80px; width: 490px; float: left; height: 60px; position: relative; z-index: 10; }
+#header .searchForm .mallSearch { height: 36px; line-height: 36px; border: 2px solid #fd0000; }
+#header .searchForm .mallSearch li { float: left; }
+#header .searchForm .mallSearch .searchL { position: relative; width: 350px; }
+#header .searchForm .mallSearch .searchL .searchBox { width: 300px; padding: 7px 0 7px 30px; outline: 0 none; border: none; height: 20px; line-height: normal; line-height: 20px\9; }
+#header .searchForm .mallSearch .searchL img { display: block; width: 24px; height: 24px; position: absolute; left: 5px; top: 5px; }
+#header .searchForm .mallSearch .searchR { width: 136px; }
+#header .searchForm .mallSearch .searchR span { width: 136px; height: 36px; line-height: 36px; background-color: #fd0000; display: block; color: white; text-align: center; font-weight: bold; cursor: pointer; font-size: 14px; }
+#header .searchForm .hotSearch { height: 20px; line-height: 20px; margin-top: 5px; }
+#header .searchForm .hotSearch .hot { color: #717275; }
+#header .searchForm .hotSearch #hotSearchBox { margin-top: 5px; }
+#header .searchForm .hotSearch #hotSearchBox .school-item { display: inline-block; margin-right: 10px; color: #717275; }
+#header .searchForm .hotSearch #hotSearchBox .school-item:hover { color: #fd0000; }
+#header .searchForm .easySearch { width: 486px; position: absolute; z-index: 100; top: 40px; left: 0; border: 2px solid #fd0000; border-top: none; background: #fff; }
+#header .searchForm .easySearch li:hover { background: #fffae1; }
+#header .searchForm .easySearch li > a { display: block; padding: 5px 10px; line-height: 20px; overflow: hidden; }
+#header .searchForm .easySearch li span { display: inline-block; line-height: 20px; color: #717275; }
+#header .searchForm .easySearch .goodsTitle { float: left; max-width: 270px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+#header .searchForm .easySearch .goodsPrice { float: right; }
+
+.goodsCar { width: 128px; height: 38px; border: 1px solid #e1e1e1; background-color: #f4f3f3; position: relative; z-index: 5; float: left; margin: 20px 0 0 50px; cursor: pointer; }
+.goodsCar .goodsCarDiv { position: absolute; top: 0; left: 0; z-index: 10; width: 100%; height: 38px; }
+.goodsCar .goodsCarDiv .carImg { display: inline-block; width: 19px; height: 18px; margin-top: 9px; margin-left: 10px; }
+.goodsCar .goodsCarDiv .carMore { width: 18px; height: 18px; margin: 5px 0 0 5px; }
+.goodsCar .goodsCarDiv .word { display: inline-block; height: 26px; line-height: 26px; margin: 6px 0 0 5px; vertical-align: top; }
+.goodsCar .goodsCarDiv .goodstips { position: absolute; display: none; height: 20px; width: 20px; background: url("../images/tips.png") no-repeat; color: white; font-weight: bold; line-height: 20px; left: 76px; top: 4px; text-decoration: none; text-align: center; }
+.goodsCar .moreGoods { position: absolute; top: 37px; right: -1px; z-index: 9; width: 340px; border: 1px solid #e1e1e1; background-color: white; }
+.goodsCar .moreGoods .noGoods { color: #999; height: 140px; line-height: 140px; padding-left: 60px; text-align: center; background: url("../images/nogoodsImg.png") 32px 32px no-repeat; }
+.goodsCar .moreGoods .noLogin { padding: 30px; }
+.goodsCar .moreGoods .noLogin p { color: #999; height: 30px; line-height: 30px; text-align: center; margin-bottom: 20px; }
+.goodsCar .moreGoods .noLogin p span { cursor: pointer; display: inline-block; width: 100px; height: 30px; background: url("../images/loginImg.png") no-repeat; }
+.goodsCar .moreGoods h3 { padding-left: 20px; margin-top: 10px; font-weight: bold; text-align: left; }
+.goodsCar .moreGoods .goodsLi { border-top: 1px solid #dfdfdf; font-size: 12px; overflow: auto; width: 305px; padding: 10px 5px 10px 20px; margin-top: 10px; }
+.goodsCar .moreGoods .goodsLi li { height: 70px; }
+.goodsCar .moreGoods .goodsLi li .goodsLi-left { width: 216px; float: left; }
+.goodsCar .moreGoods .goodsLi li .goodsLi-left .a-goodsImg { float: left; display: block; width: 54px; height: 54px; border: 1px solid #bbb; }
+.goodsCar .moreGoods .goodsLi li .goodsLi-left .a-goodsImg .goodsImg { display: inline-block; width: 54px; height: 54px; }
+.goodsCar .moreGoods .goodsLi li .goodsLi-left > p { float: left; height: 48px; margin-top: 3px; width: 155px; padding-left: 5px; }
+.goodsCar .moreGoods .goodsLi li .goodsLi-left > p .g-title { height: 32px; line-height: 16px; overflow: hidden; color: #6c6c6c; display: inline-block; width: 155px; text-align: left; }
+.goodsCar .moreGoods .goodsLi li .goodsLi-left > p .g-title:hover { color: #fd0000; }
+.goodsCar .moreGoods .goodsLi li .goodsLi-left > p .g-count { height: 16px; line-height: 16px; color: #afafaf; display: inline-block; width: 155px; text-align: left; }
+.goodsCar .moreGoods .goodsLi li .goodsLi-right { float: right; width: 60px; }
+.goodsCar .moreGoods .goodsLi li .goodsLi-right > span { display: inline-block; width: 100%; text-align: right; color: #f0252a; }
+.goodsCar .moreGoods .goodsLi li .goodsLi-right > a { display: inline-block; width: 100%; text-align: right; color: #6c6c6c; }
+.goodsCar .moreGoods .goodsCount { background-color: #e8e8e8; height: 57px; line-height: 57px; text-align: left; }
+.goodsCar .moreGoods .goodsCount > p { height: 57px; line-height: 57px; margin-left: 20px; display: inline-block; color: #6c6c6c; float: left; }
+.goodsCar .moreGoods .goodsCount > p span { height: 57px; line-height: 57px; color: #ff3434; }
+.goodsCar .moreGoods .goodsCount .carBtn { display: inline-block; float: right; margin-right: 20px; margin-top: 13px; text-align: center; color: white; width: 75px; height: 30px; line-height: 30px; background-color: #fd0000; -webkit-border-radius: 4px; -moz-border-radius: 4px; -ms-border-radius: 4px; -o-border-radius: 4px; border-radius: 4px; }
+
+.titleTop { height: 47px; background-color: #fd0000; min-width: 1200px; }
+.titleTop > ul { height: 47px; }
+.titleTop > ul .homePage { margin-left: 10px; }
+.titleTop > ul .isSel:hover { background: #fde8cb; }
+.titleTop > ul .isSel:hover a { text-decoration: none; color: #fd0000; }
+.titleTop > ul .productKinds { position: relative; width: 220px; cursor: pointer; z-index: 10; }
+.titleTop > ul .productKinds > div { position: absolute; z-index: 12; width: 100%; height: 100%; top: 0; left: 0; background-color: #ed0000; }
+.titleTop > ul .productKinds > div span { display: block; height: 47px; line-height: 47px; width: 100px; float: left; margin-left: 20px; color: white; font-weight: bold; font-size: 14px; }
+.titleTop > ul .productKinds > div .pkImg { display: block; width: 16px; height: 13px; margin: 17px 0 0 20px; float: left; }
+.titleTop > ul .productKinds > div .pkmImg { float: left; display: block; vertical-align: middle; width: 32px; height: 32px; margin: 7px 0 0 20px; }
+.titleTop > ul .productKinds .leftbImg { position: absolute; top: -14px; left: 0; display: none; z-index: 10; width: 229px; height: 47px; }
+.titleTop > ul .productKinds .itemsUL { position: absolute; width: 220px; height: 393px; top: 46px; left: 0; z-index: 200; }
+.titleTop > ul .productKinds .itemsUL .item { cursor: pointer; width: 220px; height: 30px; line-height: 30px; background-color: #cccccc; position: relative; z-index: 4; }
+.titleTop > ul .productKinds .itemsUL .item .itemP { padding: 0 10px; background-color: white; border-right: 2px solid #ed0000; border-left: 2px solid #ed0000; }
+.titleTop > ul .productKinds .itemsUL .item .itemP > p { height: 30px; line-height: 30px; color: #fd0000; }
+.titleTop > ul .productKinds .itemsUL .item .itemP > p .spanL { font-size: 12px; display: inline-block; float: left; color: #fd0000; height: 30px; line-height: 30px; }
+.titleTop > ul .productKinds .itemsUL .item .itemP > p .spanR { height: 16px; width: 16px; display: inline-block; float: right; margin-right: 10px; margin-top: 7px; }
+.titleTop > ul .productKinds .itemsUL .item .itemP > p > a { display: inline-block; float: left; color: #fd0000; margin-right: 5px; }
+.titleTop > ul .productKinds .itemsUL .item .borderTop { position: absolute; top: -2px; left: 0; width: 220px; height: 0px; z-index: 5; border-top: 2px solid #ed0000; }
+.titleTop > ul .productKinds .itemsUL .item .borderBottom { position: absolute; bottom: 0; left: 0; width: 220px; height: 0px; border-bottom: 2px solid #ed0000; z-index: 5; }
+.titleTop > ul .productKinds .itemsUL .item .itemPDetail { position: absolute; top: -2px; left: 218px; width: 350px; height: auto; overflow: hidden; border: 2px solid #ed0000; background-color: white; z-index: -1; }
+.titleTop > ul .productKinds .itemsUL .item .itemPDetail h3 { width: 100%; padding: 10px 20px; font-size: 14px; font-weight: bold; }
+.titleTop > ul .productKinds .itemsUL .item .itemPDetail > div { padding: 5px 20px; overflow: hidden; text-align: left; }
+.titleTop > ul .productKinds .itemsUL .item .itemPDetail > div a { display: inline-block; *display: inline; *zoom: 1; margin-right: 10px; color: #6c6c6c; height: 18px; line-height: 18px; width: auto; font-weight: normal; font-size: 12px; float: none; text-align: left; }
+.titleTop > ul .productKinds .itemsUL .borBottom { border-bottom: 1px dashed #fd0000; }
+.titleTop > ul .productKinds .itemsUL .lastLi { border-bottom: 2px solid #ed0000; }
+.titleTop > ul .productKinds .itemsUL .lastLi .borderBottom { bottom: -2px; }
+.titleTop > ul .productKinds .itemsUL .lastLi .itemPDetail { position: absolute; bottom: -2px; left: 218px; width: 350px; height: auto; border: 2px solid #ed0000; background-color: white; z-index: -1; }
+.titleTop > ul .productKinds .itemsUL .firstLi { border-top: 2px solid #ed0000; }
+.titleTop > ul .homePageSel { background: #fde8cb; }
+.titleTop > ul .homePageSel a { text-decoration: none; color: #fe7c04; }
+.titleTop > ul li { width: 130px; height: 47px; line-height: 47px; float: left; text-align: center; }
+.titleTop > ul li a { height: 47px; line-height: 47px; width: 125px; display: block; float: left; color: white; font-weight: bold; font-size: 14px; text-decoration: none; }
+.titleTop > ul li img { display: block; float: left; width: 1px; height: 19px; margin-top: 14px; }
+
+.goTop { position: fixed; display: inline-block; _position: absolute; _top: expression(eval(document.documentElement.scrollTop)); width: 67px; height: 67px; right: 100px; bottom: 90px; _margin-top: 380px; z-index: 1000; }
+
+.goTopImg { display: inline-block; width: 67px; height: 67px; background: url(../images/gotop_new.png) 0 0 no-repeat; }
+
+.goTopImg:hover { background: url(../images/gotop_new.png) 0 -68px no-repeat; }

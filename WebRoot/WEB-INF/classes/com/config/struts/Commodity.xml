@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+	<constant name="struts.multipart.saveDir" value="e:\"></constant>
+	<!-- 指定允许上传的文件最大字节数。默认值是2097152(2M) -->
+	<constant name="struts.multipart.maxSize" value="10701096" />
+	
+	<package name="commodity" namespace="/commodity" extends="struts-default">
+		<action name="topage" class="com.web.action.CommodityAction" method="toPage">	
+	        <result name="success">
+				/WEB-INF/page/back/commodity/commodityIndex.jsp
+            </result>    
+		</action>	
+		<action name="touploadpage" class="com.web.action.CommodityAction" method="toUploadPage">	
+	        <result name="success">
+				/WEB-INF/page/back/commodity/uploadCommodity.jsp
+            </result>    
+		</action>	
+		
+		<action name="toeditpage" class="com.web.action.CommodityAction" method="toEditPage">	
+	        <result name="success">
+				/WEB-INF/page/back/commodity/editCommodity.jsp
+            </result>    
+		</action>	
+		
+		<action name="delcommodity" class="com.web.action.CommodityAction" method="delCommodity">
+			<result name="success" type="redirectAction">
+				<param name="actionName">topage</param>
+				<param name="method">toPage</param>
+           </result>
+		</action>
+		
+		<action name="editcommodity" class="com.web.action.CommodityAction" method="editCommodity">
+			<result name="success" type="redirectAction">
+				<param name="actionName">topage</param>
+				<param name="method">toPage</param>
+           </result>
+		</action>
+		
+		<action name="uploadcommodity" class="com.web.action.UploadAction"  >		
+           <result name="success" type="redirectAction">
+				<param name="actionName">topage</param>
+				<param name="method">toPage</param>
+           </result>
+           <result name="input" type="redirectAction">
+				<param name="actionName">touploadpage</param>
+				<param name="method">toPage</param>
+           </result>
+		</action>
+		
+		<action name="tophoto" class="com.web.action.UploadAction" method="photo">
+		<result name="success" type="stream">
+				<!--指定输出的内容 -->
+				<param name="inputName">imageStream</param>
+			</result>
+		</action>
+	</package>
+
+</struts>

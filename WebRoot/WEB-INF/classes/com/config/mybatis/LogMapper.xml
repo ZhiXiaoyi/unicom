@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.LogMapper">
+	<resultMap type="com.model.pojo.Log" id="logResultMap">
+		<result property="communicationRecordId" column="communicationRecordId" />
+		<result property="userId" column="userId" />
+		<result property="logOperation" column="logOperation" />
+		<result property="logOperationTime" column="logOperationTime" />
+	</resultMap>
+
+
+	<insert id="insertLog" parameterType="com.model.pojo.Log">
+		<selectKey keyProperty="communicationRecordId" order="BEFORE"
+			resultType="Integer">
+			select seqCommunicationRecordId.nextval from dual
+		</selectKey>
+		insert into TLog values(
+		#{communicationRecordId},
+		#{userId,jdbcType=INTEGER},
+		#{logOperation,jdbcType=VARCHAR},
+		to_date(#{logOperationTime,jdbcType=VARCHAR},'yyyy-mm-dd hh24:mi:ss')
+		)
+	</insert>
+
+	<select id="findLogCount" resultType="java.lang.Integer">
+		select count(1) from TLog
+	</select>
+
+	<select id="getLogList" parameterType="com.utils.SearchPageUtil"
+		resultType="list" resultMap="logResultMap">
+		select * from (
+				select a.*, rowNum rn from (
+						select * from TLog ) a where rowNum &lt;= #{startRow}+#{pageSize})
+											where rn > #{startRow}
+	</select>
+</mapper>

@@ -1,0 +1,789 @@
+/* CSS Document */
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+
+* html .clearfix {
+    zoom: 1;
+}
+
+/* IE6 */
+*:first-child + html .clearfix {
+    zoom: 1;
+}
+
+/* IE7 */
+
+body {
+    background-color: #f7f6f4;
+    color: #666;
+}
+
+.head_top {
+    background-color: #fff;
+}
+
+.foot_down {
+    margin-top: 40px;
+}
+
+/*189头锟斤拷*/
+.my_h {
+    padding: 0 22px;
+    height: 56px;
+    line-height: 56px;
+    font-size: 21px;
+}
+
+.my_set {
+    position: absolute;
+    z-index: 99;
+    top: 10px;
+    left: 120px;
+    width: 90px;
+    border: 1px solid #F7F6F4;
+    text-align: center;
+    cursor: pointer;
+    transition: .1s ease;
+}
+
+.my_seton {
+    border-color: #dbdbdb;
+    box-shadow: 0 0 5px #ccc;
+    background-color: #fff;
+}
+
+.mys_tit {
+    height: 36px;
+    line-height: 36px;
+    padding-right: 20px;
+    background: url(../../../images/front/myInformation/arr_down.png) scroll no-repeat 55px center;
+}
+
+.my_information {
+    left: 220px;
+}
+
+.my_information .mys_tit {
+    background-position: 67px center;
+}
+
+.my_seton .mys_tit {
+    background-image: url(../../../images/front/myInformation/arr_up.png);
+}
+
+.mys_list {
+    display: none;
+}
+
+.my_seton .mys_list {
+    display: block;
+}
+
+.mys_list a {
+    display: block;
+    height: 36px;
+    line-height: 36px;
+    color: #666;
+}
+
+.mys_list a:hover {
+    background-color: #f0f0f0;
+}
+
+/* 189锟斤拷锟�*/
+.usr_left {
+    float: left;
+    width: 190px;
+}
+
+.greent_nav {
+    background-color: #fff;
+    width: 158px;
+    border: 1px #dbdbdb solid;
+    padding: 30px 0 10px 30px;
+}
+
+.subNavBox {
+}
+
+.subNav {
+    cursor: pointer;
+    font-size: 14px;
+    color: #666;
+    line-height: 28px;
+    padding-left: 10px;
+    background: url(../../../images/front/myInformation/gt_add_ico.png) no-repeat 0 50%;
+    padding-left: 20px;
+}
+
+.subNav:hover {
+    color: #666;
+}
+
+.currentDd {
+    color: #666
+}
+
+.currentDt {
+    background: url(../../../images/front/myInformation/gt_minus_ico.png) no-repeat 0 50%;
+}
+
+.navContent {
+    display: none;
+}
+
+.navContent li a {
+    display: block;
+    heighr: 28px;
+    font-size: 14px;
+    line-height: 28px;
+    color: #999;
+    padding-left: 20px;
+}
+
+.navContent li a:hover {
+    color: #ff8202;
+}
+
+.green_tunnel {
+    margin: 20px 0;
+}
+
+.greent_txt {
+    height: 16px;
+    padding: 0 10px;
+    margin-bottom: 12px;
+    border-left: 5px #ff8202 solid;
+    overflow: hidden;
+}
+
+.greent_txt h3 {
+    font: normal 16px/16px "Microsoft Yahei";
+    color: #666666;
+}
+
+.greent_cont ul {
+    overflow: hidden;
+}
+
+.greent_cont li {
+    float: left;
+    width: 190px;
+    height: 82px;
+    margin-bottom: 2px;
+    overflow: hidden;
+}
+
+.greent_cont li.x_color_1 {
+    background-color: #ffda60;
+}
+
+.greent_cont li.x_color_2 {
+    background-color: #ff9867;
+}
+
+.greent_cont li.x_color_3 {
+    background-color: #8ab6ff;
+}
+
+.greent_cont li a {
+    display: block;
+    height: 46px;
+    padding: 18px 24px;
+    text-align: left;
+    color: #ffffff;
+}
+
+.greent_cont li a:hover {
+    background: rgba(255, 255, 255, .3);
+}
+
+.greent_cont li h3 {
+    font: normal 22px/26px "Microsoft Yahei";
+    padding-bottom: 3px;
+}
+
+.greent_cont li p {
+    font-size: 13px;
+}
+
+/********** 189锟揭诧拷 */
+.usr_right {
+    color: #666;
+}
+
+/*锟斤拷锟斤拷锟斤拷锟斤拷*/
+.usrr_mbgr {
+    width: 998px;
+    padding-bottom: 20px;
+    margin-bottom: 10px;
+    border: 1px solid #dbdbdb;
+    background-color: #fff;
+}
+
+.usrr_mbgr .greent_txt {
+    margin: 24px 0 0 26px;
+}
+
+.myinfotab {
+}
+
+.myinfo_tab_menu {
+    clear: both;
+    padding: 20px 40px;
+}
+
+.myinfo_tab_menu li {
+    float: left;
+    height: 50px;
+    line-height: 50px;
+}
+
+.myinfo_tab_menu li.s {
+    padding: 0 20px;
+    cursor: pointer;
+    color: #777;
+}
+
+.myinfo_tab_menu li.t {
+    padding: 0 20px;
+    color: #ccc;
+}
+
+.selected {
+    border-bottom: 3px solid #ff8202;
+    background: url(../../../images/front/myInformation/myinfo_select.png) no-repeat center bottom;
+    color: #ff8202;
+}
+
+.myinfo_tab_box {
+    clear: both;
+    background: #fff;
+}
+
+.myinfo_tab_box .hide {
+    display: none;
+}
+
+.myform {
+    padding: 20px 40px 160px;
+    color: #777;
+    position: relative;
+    background: #fff;
+}
+
+.myform#mf_01 {
+    z-index: 3;
+}
+
+.myform#mf_02 {
+    z-index: 0;
+}
+
+.myform#mf_03 {
+    z-index: 3;
+}
+
+.myform .item {
+    padding: 10px 20px;
+    clear: both;
+}
+
+.myform .item span.ftit {
+    float: left;
+    width: 60px;
+    line-height: 30px;
+    text-align: right;
+    padding: 0 40px 0 0;
+    white-space: nowrap;
+}
+
+.myform .item span.ftit em {
+    font-style: normal;
+    color: #f00;
+    padding: 0 2px;
+}
+
+.myform .item div.fcon {
+    line-height: 30px;
+}
+
+.myform .item div.fcon input.text {
+    float: left;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 4px;
+    margin: 2px;
+}
+
+.myform .item div.fcon input.checkbox {
+    float: left;
+}
+
+.myform .item div.fcon input.radio {
+    float: left;
+}
+
+.myform .item div.fcon div.tag_select {
+    float: left;
+    position: relative;
+}
+
+.myform .item div.fcon a.a_link {
+    color: #06c;
+    padding: 0 10px;
+    float: left;
+}
+
+.myform .item div.fsub {
+    padding: 0 0 0 90px;
+}
+
+.myform .item div.fsub input.button {
+    height: 25px;
+    width: 87px;
+    background: url(../../../images/front/myInformation/sub_btn.png) no-repeat 0 0;
+    color: #fff;
+    border: none;
+    float: left;
+    margin: 0 20px 0 0;
+    outline: none;
+}
+
+.myform .item div.fsub input.button:hover {
+    background: url(../../../images/front/myInformation/sub_btn.png) no-repeat 0 -25px;
+}
+
+.myform .item div.fcon span {
+    display: block;
+    float: left;
+    height: 29px;
+    margin: 0 10px 0 0;
+}
+
+.myform .item div.fcon span.txt {
+    padding: 0 0 0 20px;
+}
+
+.myform .item div div.tip {
+    float: left;
+    display: block;
+    padding: 0 0 0 20px;
+}
+
+.myform .item div div.errortip {
+    float: left;
+    display: block;
+    padding: 0 0 0 20px;
+    color: red;
+}
+
+.myform .item div div.initdistip {
+    display: none;
+}
+
+.myform .item div div.tip_01 {
+    background: url(../../../images/front/myInformation/yanz_01.png) no-repeat 0 center;
+    height: 25px;
+    line-height: 25px;
+}
+
+.myform .item div div.tip_00 {
+    color: #ff8202;
+}
+
+.swrap {
+    position: relative;
+    float: left;
+}
+
+.myform .item div.fcon div.tag_select {
+    display: block;
+    line-height: 20px;
+    color: #777;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 2px 30px 2px 4px;
+    margin: 2px 10px 2px 0;
+    background: url(../../../images/front/myInformation/select_ico.png) no-repeat right center;
+    font-size: 12px;
+    position: relative;
+    z-index: 999;
+}
+
+.myform .item div.fcon div.tag_select_hover {
+}
+
+.myform .item div.fcon div.tag_select_open {
+}
+
+.myform .item div.fcon ul.tag_options {
+    position: absolute;
+    list-style: none;
+    overflow: hidden;
+    overflow-y: auto;
+    font-size: 12px;
+    cursor: pointer;
+    z-index: 1000;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 4px 30px 4px 4px;
+    border-top: none;
+    top: 25px;
+    left: 0;
+    max-height: 240px;
+    background: url(../../../images/front/myInformation/select_line.png) repeat-x 0 0 #fff;
+    border-top: none;
+}
+
+.myform .item div.fcon ul.tag_options li {
+    background: #fff;
+    display: block;
+    height: 20px;
+    text-decoration: none;
+    line-height: 20px;
+    color: #000;
+    font-weight: normal;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.myform .item div.fcon ul.tag_options li.open_hover {
+    color: #ff8202;
+}
+
+ul.tag_options li.open_selected {
+    background: #ccc;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.chklist {
+    width: 600px;
+    float: left;
+    clear: both;
+    margin: 0 0 0 90px;
+}
+
+label.checkbox {
+    padding: 0 24px 0 4px;
+    cursor: pointer;
+    line-height: 24px;
+    height: 24px;
+    display: block;
+    float: left;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+label.checked {
+    border: 1px solid #ff8202;
+    color: #ff8202;
+    background: url(../../../images/front/myInformation/checkbox_checked.png) no-repeat right center;
+}
+
+label.disabled {
+}
+
+.myform#mf_03 {
+    min-height: 400px;
+}
+
+.myform#mf_03 .item {
+    width: 400px;
+}
+
+.myform#mf_03 .item div.fcon .tag_select {
+    width: 160px;
+}
+
+.myform#mf_03 .item div.fcon .tag_options li {
+    width: 160px;
+}
+
+.mleft203 {
+    margin-left: 203px;
+}
+
+/*/*/
+.portrait_left {
+    width: 500px;
+    float: left;
+    padding: 0 20px 0 0;
+    background: url(../../../images/front/myInformation/dark_shadow.png) no-repeat right center;
+}
+
+.upload_pro {
+    height: 26px;
+    overflow: hidden;
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+    width: 200px;
+    padding: 0 20px;
+    margin: 30px 0 0 0;
+}
+
+.upload_pro label {
+    cursor: pointer;
+}
+
+.upload_pro span {
+    display: block;
+    height: 26px;
+    line-height: 26px;
+    background: url(../../../images/front/myInformation/up.jpg) no-repeat 0 center;
+    padding: 0 0 0 20px;
+    margin: 0 auto;
+    width: 140px;
+}
+
+.upload_pro input {
+    position: absolute;
+    top: 0;
+    left: -1000000px;
+    z-index: -1;
+}
+
+.portrait_left .tip {
+    margin: 20px 0;
+}
+
+.myform .portrait_left .item .fsub {
+    padding: 0;
+}
+
+.picturecss {
+    width: 420px;
+    background: #fcfcfc;
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+    overflow: hidden;
+    height: 331px;
+}
+
+.avatarcss {
+    max-width: 420px;
+    max-height: 229px;
+    margin: 50px auto;
+    display: block;
+    width: expression(width>420?"420px":width+"px");
+    overflow: hidden;
+}
+
+.imgareaselect-handle {
+    background-color: #fff;
+    border: solid 1px #000;
+    filter: alpha(opacity=50);
+    opacity: 0.5;
+}
+
+.imgareaselect-outer_ {
+    background-color: #000;
+    filter: alpha(opacity=50);
+    opacity: 0.5;
+}
+
+.imgareaselect-selection {
+}
+
+.portrait_revolve {
+    height: auto;
+    padding-top: 15px;
+    width: 306px;
+}
+
+.portrait_right_txt strong {
+    display: block;
+    color: #777;
+}
+
+.portrait_right_txt {
+    text-align: left;
+    padding: 0 0 20px;
+    color: #999;
+}
+
+.portrait_right {
+    float: left;
+    padding: 100px 0 0 60px;
+    text-align: center;
+}
+
+.portrait1 {
+    width: 300px;
+}
+
+.portrait1 p {
+    line-height: 210px;
+    float: left;
+    margin: 0 30px;
+}
+
+.portrait2 {
+    width: 300px;
+}
+
+.portrait2 p {
+    line-height: 90px;
+    float: left;
+    margin: 0 30px;
+}
+
+#img_big_preview {
+    margin: 30px auto;
+    width: 140px;
+    height: 140px;
+    float: left;
+}
+
+#img_small_preview {
+    height: 70px;
+    margin: 0 auto;
+    width: 70px;
+    float: left;
+}
+
+.img_preview {
+    border: 10px solid #eee;
+    overflow: hidden;
+    position: relative;
+    border-radius: 50% 50%;
+    margin: 0 auto;
+    float: left;
+    clear: both;
+}
+
+.img_preview img {
+    margin: 0;
+    position: relative;
+}
+
+.portrait_demo {
+    width: 400px;
+    margin: 30px 10px;
+}
+
+.portrait_demo strong {
+    margin: 0 0 20px;
+    display: block;
+}
+
+.ither {
+    width: 580px;
+    height: 500px;
+    padding: 50px 0 0 20px;
+    position: absolute;
+    top: 50px;
+    right: 0;
+}
+
+.ither .tip {
+    padding: 0 0 0 90px;
+}
+
+.intr {
+    margin: 20px 0;
+}
+
+.leftbar {
+    height: 190px;
+    width: 70px;
+    float: left;
+    background: url(../../../images/front/myInformation/sildimg.png) no-repeat 0 0;
+}
+
+.rightbar {
+    height: 190px;
+    width: 70px;
+    float: left;
+    background: url(../../../images/front/myInformation/sildimg.png) no-repeat -210px 0;
+}
+
+.leftbar:hover {
+    background: url(../../../images/front/myInformation/sildimg.png) no-repeat -70px 0;
+}
+
+.rightbar:hover {
+    background: url(../../../images/front/myInformation/sildimg.png) no-repeat -140px 0;
+}
+
+.sil {
+    width: 400px;
+    float: left;
+}
+
+.silt {
+    padding: 20px 0;
+}
+
+.silt i {
+    font-style: normal;
+    font-weight: bold;
+    padding: 0 10px 0 0;
+}
+
+.silt a {
+    display: block;
+    width: 48px;
+    height: 21px;
+    float: right;
+    text-align: center;
+    line-height: 21px;
+    background: url(../../../images/front/myInformation/icon_btn.png) scroll no-repeat 0 -92px;
+    color: #fff;
+}
+
+.tagsinput {
+    height: 80px;
+    width: 390px !important;
+    overflow: auto;
+    border: 1px solid #ccc;
+    margin: 5px 0;
+    padding: 2px;
+}
+
+.tagsinput .tag {
+    float: left;
+    background: #fff2e5;
+    border: 1px solid #ffbd79;
+    color: #777;
+    padding: 0 2px;
+    margin: 2px;
+    border-radius: 3px;
+}
+
+.tagsinput .tag span {
+    font-size: 12px;
+    padding: 0 2px;
+}
+
+.tagsinput .tag a {
+    color: #ffbd79;
+}
+
+#tags_1_tag {
+    outline: none;
+    display: none;
+}
+
+.tag_demo {
+}
+
+.tag_demo a {
+    background: #8ab6ff url(../../../images/front/myInformation/tag_plus.png) no-repeat 2px 4px;
+    color: #fff;
+    border-radius: 3px;
+    margin: 2px;
+    float: left;
+    text-indent: 14px;
+    font-size: 12px;
+    padding: 1px 3px;
+}

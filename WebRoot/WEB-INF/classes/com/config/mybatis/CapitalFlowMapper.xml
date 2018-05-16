@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.CapitalFlowMapper">
+
+	<!-- 查询记录表中的积分 -->
+	<select id="findUsedScoreByUserId" parameterType="java.lang.Integer" resultType="java.lang.Integer">
+		select FLOWSCORE from TCAPITALFLOW where userId=#{userId}
+	</select>
+</mapper>

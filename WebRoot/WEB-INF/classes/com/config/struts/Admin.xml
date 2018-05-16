@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+	<package name="admin" namespace="/admin" extends="struts-default">
+		<action name="topage" class="com.web.action.AdminAction" method="toPage">	
+	        <result name="success">
+				/WEB-INF/page/back/admin/adminIndex.jsp
+            </result>    
+		</action>	
+		<action name="toaddpage" class="com.web.action.AdminAction" method="toAddPage">	
+	        <result name="success">
+				/WEB-INF/page/back/admin/addAdmin.jsp
+            </result>    
+		</action>	
+		<action name="toeditpage" class="com.web.action.AdminAction" method="toEditPage">	
+	        <result name="success">
+				/WEB-INF/page/back/admin/editAdmin.jsp
+            </result>    
+		</action>	
+		<action name="addadmin" class="com.web.action.AdminAction" method="addAdmin">	
+	         <result name="success" type="redirectAction">
+				<param name="actionName">topage</param>
+				<param name="method">toPage</param>
+           </result>
+		</action>	
+		<action name="editadmin" class="com.web.action.AdminAction" method="editAdmin">	
+	         <result name="success" type="redirectAction">
+				<param name="actionName">topage</param>
+				<param name="method">toPage</param>
+           </result>
+		</action>	
+		<action name="deladmin" class="com.web.action.AdminAction" method="delAdmin">	
+	         <result name="success" type="redirectAction">
+				<param name="actionName">topage</param>
+				<param name="method">toPage</param>
+           </result>
+		</action>	
+	</package>
+
+</struts>
+

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.UserMapper">
+
+	<select id="findUserByEmail" resultType="com.model.pojo.User"
+		parameterType="String">
+		select *
+		from TUser where
+		userEmail=#{userEmail}
+	</select>
+	<select id="findUserByUserId" resultType="com.model.pojo.User"
+		parameterType="Integer">
+		select *
+		from TUser where
+		userId=#{userId}
+	</select>
+	<insert id="addUser"  parameterType="com.model.pojo.User"  >
+		<selectKey keyProperty="userId" order="BEFORE" resultType="java.lang.Integer">
+			select seqUserId.nextval from dual
+		</selectKey>
+			insert into TUser values(
+				#{userId},
+				#{userNickname,jdbcType=VARCHAR},
+				#{userRealname,jdbcType=VARCHAR},
+				#{userSex,jdbcType=VARCHAR},
+				#{userAge,jdbcType=NUMERIC},
+				#{userPwd,jdbcType=VARCHAR},
+				#{userPhotoPath,jdbcType=VARCHAR},
+				#{userAddress,jdbcType=VARCHAR},
+				#{userIdCard,jdbcType=VARCHAR},
+				#{userEmail,jdbcType=VARCHAR}
+			)
+	</insert>
+	<update id="updateUser" parameterType="com.model.pojo.User">
+		  update TUser set
+	        userNickname=#{userNickname,jdbcType=VARCHAR},
+	        userRealname=#{userRealname,jdbcType=VARCHAR},
+	        userSex=#{userSex,jdbcType=VARCHAR},
+	        userAge=#{userAge,jdbcType=INTEGER},
+	        userAddress=#{userAddress,jdbcType=VARCHAR},
+	        userPhotoPath=#{userPhotoPath,jdbcType=VARCHAR},
+	        userIdCard=#{userIdCard,jdbcType=VARCHAR},
+	        userEmail=#{userEmail,jdbcType=VARCHAR} 
+	        where userId=#{userId}
+	</update>
+	
+</mapper>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+ 
+ <mapper namespace="com.dao.AreaMapper">
+ 	<select id="selectAreaList" resultType="com.model.pojo.Area" parameterType="com.model.pojo.Area">
+ 		select * from TAREA
+ 		<where>
+ 			<if test="areaid!=null">
+ 				and AREAID=#{areaid}
+ 			</if>
+ 			<if test="areaname!=null">
+ 				and AREANAME like concat(concat('%',#{areaname}),'%')			
+ 			</if>
+ 		</where>
+ 	</select>
+ 	
+ 	<update id="updateArea" parameterType="com.model.pojo.Area">
+ 		update TAREA set areaname=#{areaname} where areaid=#{areaid}
+ 	</update>
+ 	
+ 	<insert id="insertArea" parameterType="com.model.pojo.Area">
+ 		insert into TAREA values (area.nextval,#{areaname})
+ 	</insert>
+ </mapper>

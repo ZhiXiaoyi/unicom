@@ -1,0 +1,23 @@
+body, ul, li, h1, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td{color: #777777; font-family: å¾®è½¯é›…é»‘,verdana; font-size: 100%; margin: 0 auto; padding: 0;}
+img{border: 0 none;}
+a:link{color: #777777; text-decoration: none;}
+a:hover{color: #777777; text-decoration: underline;}
+a{color: #777777;}
+ul, ol, li{list-style: outside none none;}
+.fr{display: inline; float: right;}
+.pt15{padding-top: 15px;}
+.f14{font-size: 0.85em;}
+.pt1{padding-top: 1px;}
+.fl{display: inline; float: left;}
+.ml8{margin-left: 8px;}
+.cf_a a{color: #fff;}
+.mr4{margin-right: 4px;}
+.ml4{margin-left: 4px;}
+.pt2-7{*padding-top:2px;color: #fff;}
+.lr_ydl{font-family: "Î¢ÈíÑÅºÚ";font-size: 14px;color: #ffffff;line-height: 45px;
+margin-left: 12px;float: left;width: 45px;		}
+.header_d2_bt_logo {
+	background: url(../../../images/front/mainFace/icon-189-indexv2.png) no-repeat -231px -186px;
+	width: 16px;
+	height: 15px;
+}

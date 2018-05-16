@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.PrepaidCardMapper">
+	<!-- 通过充值id 查询出所有的字段 -->
+	<select id="findPrepaidCardByPrepaidCardId" resultType="com.model.pojo.PrepaidCard"
+		parameterType="Integer">
+		select * from TPrepaidCard where
+		prepaidCardId =
+		#{prepaidCardId}
+	</select>
+	<!-- 修改卡状态 -->
+	<update id="updatePrepaidCardStateByPrepaidCardId" parameterType="com.model.vo.PrepaidCardIdAndPsw">
+		update
+		TPrepaidCard set prepaidCardState =
+		#{prepaidCardState} where
+		prepaidCardId = #{prepaidCardId}
+	</update>
+
+	<!-- 修改卡销售时间 -->
+	<update id="updateSallTimeByPrepaidCardId" parameterType="Integer">
+		update
+		TPrepaidCard set sallTime = sysdate where
+		prepaidCardId =
+		#{prepaidCardId}
+	</update>
+
+	<!-- 修改卡充值的电话 -->
+	<update id="updateMobileCardIdByPrepaidCardId" parameterType="Integer">
+		update
+		TPrepaidCard set mobileCardId = #{mobileCardId} where
+		prepaidCardId = #{prepaidCardId}
+	</update>
+
+	<!-- 查询剩余的充值卡数量 -->
+	<select id="selectUnsellPrepaidCardNumber" resultType="Integer">
+		select
+		count(*)
+		from TPREPAIDCARD where PREPAIDCARDSTATE = '未售'
+	</select>
+
+	<!-- 筛选购买的充值卡 -->
+	<select id="selectUnsellPrepaidCard" resultType="com.model.vo.PrepaidCardIdAndPsw"
+	parameterType="Integer">
+		select 
+		PREPAIDCARDID,PREPAIDCARDPASSWORD from
+		TPREPAIDCARD where PREPAIDCARDSTATE = '未售' and
+		ROWNUM &lt;=#{cardNumber}
+		order by PREPAIDCARDID
+	</select>
+</mapper>

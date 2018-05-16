@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+    
+    <struts>
+    	<package name="applicationFrom" namespace="/applicationfrom" extends="struts-default">
+    		<!-- 查看未审核的业务申请 -->  
+            <action name="toCheck" class="com.web.action.CheckAction" method="getApplicationList">
+    			<result	name="success">
+    				/WEB-INF/page/back/applicationfrom/CheckApplicationFrom.jsp
+    			</result>
+    		</action>
+    		<!-- 查看已审核的业务申请 -->
+    		<action name="toSelect" class="com.web.action.CheckAction"  method="getApplication">
+    			<result name="success">
+    				/WEB-INF/page/back/applicationfrom/CheckApplicationFrom.jsp
+    			</result>
+    		</action>
+    		<!-- 套餐业务申请的审核通过 -->
+    		<action name="toPass" class="com.web.action.CheckAction"  method="passCheck">
+    			<result name="success" >
+    				/WEB-INF/page/back/applicationfrom/CheckApplicationFrom.jsp
+    			</result>
+    		</action>
+    		<!-- 查看可更换申请的套餐 -->
+    		<action name="toPackages" class="com.web.action.CheckAction" method="toPackageList">
+    			<result name="success">
+    				/WEB-INF/page/back/applicationfrom/ApplicationPackage.jsp
+    			</result>
+    			<result name="login" >
+   						/WEB-INF/page/front/login/userLogin.jsp
+    			</result>
+    		</action>
+    		<!-- 用户申请更换套餐信息上传服务器 -->
+    		<action name="uploadapplication" class="com.web.action.CheckAction" method="uploadApplication">
+    			<result name="success">
+    				/WEB-INF/page/front/mainFace/mainFace.jsp
+    			</result>
+    		</action>
+    	</package>
+    </struts>

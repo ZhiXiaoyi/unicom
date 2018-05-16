@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.CheckMapper">
+	<!-- 查询申请了业务变更的电话卡 -->
+	<select id="getApplicationForms" resultMap="getApplicationForm" parameterType="com.model.pojo.MobileCard">
+		select c.applicationid,c.packageid,c.packageinfo,t.packageinfo TT,t.phonenumber,c.applicationstate from 
+		(select applicationid,a.packageid,mobilecardid,applicationstate,packageinfo from tapplicationform a left join tpackage p ON a.packageid=p.packageid ) c 
+		left join 
+		(select p.packageid,mobilecardid,packageinfo,m.phonenumber from tmobilecard  m left join tpackage  p on m.packageid=p.packageid) t 
+		on t.mobilecardid=c.mobilecardid  where applicationstate=0
+		 ORDER BY applicationid
+	</select>
+	<!-- 查询申请了业务变更的电话卡 -->
+	<select id="getApplicationForm" resultMap="getApplicationForm" parameterType="com.model.pojo.SelectCheckInfo">
+		select c.applicationid,c.packageid,c.packageinfo,t.packageinfo TT,t.phonenumber,c.applicationstate from 
+		(select applicationid,a.packageid,mobilecardid,applicationstate,packageinfo from tapplicationform a left join tpackage p ON a.packageid=p.packageid ) c 
+		left join 
+		(select p.packageid,mobilecardid,packageinfo,m.phonenumber from tmobilecard  m left join tpackage  p on m.packageid=p.packageid) t 
+		on t.mobilecardid=c.mobilecardid
+		<where>
+			<if test="phoneNumber!=0">and phonenumber=#{phoneNumber}</if>
+			<if test="applicationState!=null">and c.applicationstate=#{applicationState}</if>
+		</where>
+		 ORDER BY applicationid
+	</select>
+	<!-- 查看可更换的业务套餐列表-->
+	<select id="getPackageList" resultType="com.model.pojo.TPackage" >
+		select * from TPACKAGE
+	</select>
+	<!-- 利用userid查询用户绑定的电话卡 -->
+	<select	id="selectPhoneNumber"     parameterType="java.lang.Integer"  resultType="com.model.pojo.MobileCard">
+		select * from TMOBILECARD where USERID=#{id}
+	</select>
+	<!-- 审核通过 -->
+	<update id="updateApplicationState"	parameterType="com.model.pojo.ApplicationForm">
+		update TAPPLICATIONFORM set APPLICATIONSTATE=1 where applicationid in
+		<foreach collection="applicationFormList" item="roleid" open="(" separator="," close=")">
+			#{roleid}
+		</foreach>
+	</update>
+	<!-- 审核通过改变业务套餐 -->
+	<update id="updateChangePackage"	parameterType="com.model.pojo.ChangePackage">	
+			update TMOBILECARD set PACKAGEID=#{packageid} where PHONENUMBER=#{phonenumber}
+	</update>
+	<!--上传客户刚提交的套餐变更申请  -->
+	<insert id="uploadApplication" parameterType="com.model.pojo.ApplicationForm">
+		insert into TAPPLICATIONFORM values (app.nextval,#{newpackageNum},#{mobilecardid},0)
+	</insert>
+	<resultMap id="getApplicationForm" type="com.model.pojo.ApplicationForm" >
+		<result property="applicationid" column="applicationid"></result>
+		<result property="newpackageNum" column="PACKAGEID"></result>
+		<result property="newpackageInfo" column="PACKAGEINFO"></result>
+		<result property="oldpackageInfo" column="TT"></result>
+		<result property="mobilecardid" column="phonenumber"></result>
+		<result property="State" column="APPLICATIONSTATE"></result>
+	</resultMap>
+	
+
+</mapper>

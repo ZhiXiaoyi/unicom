@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="ifrmaes" namespace="/iframes" extends="struts-default">
+		<action name="userLoginIframe">
+			<result name="success">
+				/WEB-INF/page/front/mainFace/userLoginIframe.jsp
+			</result>
+		</action>
+		<action name="toIndex2">
+			<result name="success">
+				/WEB-INF/page/front/mainFace/index2.jsp
+			</result>
+		</action>
+		<action name="toRight">
+			<result name="success">
+				/WEB-INF/page/front/mainFace/right.jsp
+			</result>
+		</action>
+		<action name="toSaved_resource(1)">
+			<result name="success">
+				/WEB-INF/page/front/myInformation/saved_resource(1).jsp
+			</result>
+		</action>
+		<action name="toSaved_resource(2)">
+			<result name="success">
+				/WEB-INF/page/front/myInformation/saved_resource(2).jsp
+			</result>
+		</action>
+		<action name="toSaved_resource(3)">
+			<result name="success">
+				/WEB-INF/page/front/myInformation/saved_resource(3).jsp
+			</result>
+		</action>
+		<action name="toSaved_resource(4)">
+			<result name="success">
+				/WEB-INF/page/front/myInformation/saved_resource(4).jsp
+			</result>
+		</action>
+		<!-- 展示个人信息界面 -->
+	    <action name="toUserInfo">
+			<result name="success">
+				/WEB-INF/page/front/myInformation/userInfo.jsp
+			</result>
+		</action>
+		
+        <action name="toInformation">
+			<result name="success">
+				/WEB-INF/page/front/myInformation/information.jsp
+			</result>
+		</action>
+		<!-- 测试我的欢乐go -->
+        <action name="toMyInformation">
+			<result name="success">
+				/WEB-INF/page/front/myInformation/myInformation.jsp
+			</result>
+		</action>
+		<!-- 刷新当前用户 -->
+		<action name="toNewMyInformation"  class="com.web.action.UserLoginAction"
+		method="newMyInformation">
+			<result name="success">
+				/WEB-INF/page/front/myInformation/myInformation.jsp
+			</result>
+		</action>
+	</package>
+</struts>

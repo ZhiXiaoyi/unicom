@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="userbase" extends="json-default" abstract="true">
+		<!--注册拦截器 -->
+		<interceptors>
+			<interceptor name="userlogin" class="com.web.intercepts.UserInterceptor" />
+			<!-- 2注册拦截器栈 -->
+			<interceptor-stack name="userloginStack">
+				<interceptor-ref name="userlogin">
+				</interceptor-ref>
+	<!-- 			<interceptor-ref name="defaultStack" /> -->
+			</interceptor-stack>
+		</interceptors>
+		<!-- 设置当前包下所有Action默认引用的拦截器 -->
+		<default-interceptor-ref name="userloginStack" />
+		<global-results>
+			<result name="login">
+				/WEB-INF/page/front/login/userLogin.jsp
+			</result>
+		</global-results>
+	</package>
+</struts>

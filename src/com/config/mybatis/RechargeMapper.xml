@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.RechargeMapper">
+
+	<select id="selectCostBalance" resultType="java.lang.Integer"
+		parameterType="java.lang.Long">
+		select costBalance
+		from TMobileCard where
+		phoneNumber =
+		#{phoneNumber}
+	</select>
+
+	<update id="updateCostBalance"  parameterType="com.model.vo.PhoneNumberAndCostblance">
+		update TMobileCard
+		set
+		costBalance = #{costBalance} where
+		phoneNumber = #{phoneNumber}
+	</update>
+</mapper>

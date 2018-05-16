@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="userlogin" namespace="/userLogin" extends="struts-default">
+		<action name="toLogin" class="com.web.action.UserLoginAction">
+			<result name="success">
+				/WEB-INF/page/front/login/userLogin.jsp
+			</result>
+		</action>
+		<action name="loginIframe">
+			<result name="success">
+				/WEB-INF/page/front/login/loginIframe.jsp
+			</result>
+		</action>
+		<action name="starlogin" class="com.web.action.UserLoginAction"
+			method="userLogin">
+			<!-- 登录成功返回界面 -->
+			<result name="login" type="redirectAction">
+				<param name="actionName">toMainFace</param>
+			</result>
+			<!-- 登录失败返回界面 -->
+			<result name="error" type="redirectAction">
+				<param name="actionName">toLogin</param>
+			</result>
+		</action>
+		<!-- 退出登录 -->
+		<action name="userLogout" class="com.web.action.UserLoginAction"
+			method="userLogout">
+			<result name="success">
+				/WEB-INF/page/front/login/userLogin.jsp
+			</result>
+		</action>
+		<!-- 转到主界面 -->
+		<action name="toMainFace" class="com.web.action.UserLoginAction">
+			<result name="success">
+				/WEB-INF/page/front/mainFace/mainFace.jsp
+			</result>
+		</action>
+		<!-- 判断是否登录 -->
+		<action name="isUserLogin" class="com.web.action.UserLoginAction"
+		method="isUserLogin">
+			<result name="success">
+				/WEB-INF/page/front/myInformation/myInformation.jsp
+			</result>
+			<result name="error">
+				/WEB-INF/page/front/login/userLogin.jsp
+			</result>
+		</action>
+	</package>
+</struts>

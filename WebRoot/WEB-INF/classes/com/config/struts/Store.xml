@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+	<package name="store" namespace="/store" extends="struts-default">
+		<action name="topage" class="com.web.action.StoreAction" method="toStorePage">	
+	        <result name="success">
+				/WEB-INF/page/front/store/shopStore.jsp
+            </result>    
+		</action>	
+		
+		<action name="commoditymsg" class="com.web.action.StoreAction" method="toMsgPage">	
+	        <result name="success">
+				/WEB-INF/page/front/store/commodity.jsp
+            </result>    
+		</action>	
+		
+		<action name="order" class="com.web.action.StoreAction" method="markOrder">	
+	        <result name="success">
+				/WEB-INF/page/front/store/orderResult.jsp
+            </result>    
+		</action>	
+		
+		
+		<action name="myorder" class="com.web.action.StoreAction" method="toMyOrder">	
+	        <result name="success">
+				/WEB-INF/page/front/store/order.jsp
+            </result>    
+		</action>	
+	</package>
+	
+	<package name="storejson" namespace="/storejson" extends="json-default">  
+		<action name="selectjifen" class="com.web.action.StoreAction" method="selectJiFen">  
+            <result name="success" type="json">
+            	<param name="root">map</param>
+            </result>  
+        </action> 
+	</package>
+
+</struts>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+	<package name="map" namespace="/map" extends="struts-default">
+		<action name="tomap" class="com.web.action.MapAction" method="toMap">
+			<result name="success">
+				/WEB-INF/page/front/map/map.jsp
+			</result>
+		</action>
+		<action name="towelcome" class="com.web.action.MapAction"
+			method="toWelcome">
+			<result name="success">
+				/WEB-INF/page/back/main/welcome.jsp
+			</result>
+		</action>
+
+
+
+	</package>
+
+
+
+</struts>

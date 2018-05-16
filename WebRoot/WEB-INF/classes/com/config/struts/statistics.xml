@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+    
+<struts>
+	<package name="cartogram" namespace="/cartogram" extends="struts-default">
+		<action name="toCartogram" class="com.web.action.CartogramAction" method="execute">
+			<result name="success">
+				/WEB-INF/page/back/Statistics/BusinessStatistics.jsp
+			</result>
+		</action>
+		<action name="toStatistics" class="com.web.action.CartogramAction" method="Cartogram">
+			<result name="success">
+				/WEB-INF/page/back/Statistics/BusinessStatistics.jsp
+			</result>
+		</action>
+		<action name="toAreaExcute" class="com.web.action.CartogramAction" method="toAreaExcute">
+			<result name="success">
+				/WEB-INF/page/back/Statistics/AreaStatistics.jsp
+			</result>
+		</action>
+		<action name="toAreaCartogram" class="com.web.action.CartogramAction" method="AreaCartogram">
+			<result name="success">
+				/WEB-INF/page/back/Statistics/AreaStatistics.jsp
+			</result>
+		</action>
+	</package>
+</struts>

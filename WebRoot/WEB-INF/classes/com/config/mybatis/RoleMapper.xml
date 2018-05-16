@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.RoleMapper">												
+	<resultMap id="roleMap" type="com.model.pojo.Role">
+		<id property="roleId" column="roleId"/>
+		<result property="roleName" column="roleName"/>
+		<collection property="relationList" ofType="com.model.pojo.Relation">
+			<id property="relationId" column="relationId"/>
+			<result property="jurisdictionId" column="jurisdictionId"/>
+			<result property="roleId" column="roleId"/>
+		</collection>
+	</resultMap>
+	
+	<resultMap type="com.model.pojo.Role" id="roleResultMap">  
+        <result property="roleId" column="roleId" />  
+        <result property="roleName" column="roleName" />  
+    </resultMap>  
+    	
+	<update id="updateRole" parameterType="com.model.pojo.Role">
+        update TRole set
+        roleName=#{roleName,jdbcType=VARCHAR}
+        where roleId=#{roleId}
+    </update>
+	
+	<insert  id="addRole" parameterType="com.model.pojo.Role">
+		<selectKey keyProperty="roleId" order="BEFORE" resultType="java.lang.Integer">
+			select role_seq.nextval from dual
+		</selectKey>
+		insert into TRole  values(
+		#{roleId},
+		#{roleName,jdbcType=VARCHAR}
+		)
+	</insert>
+	
+	<select id="findRoleByName" resultType="com.model.pojo.Role">
+		    select * from TRole where roleName = #{roleName}
+	</select>
+	
+	<select id="findRoleById" resultMap="roleMap" resultType="com.model.pojo.Role" parameterType="Integer">
+		   select * from TRole left join TRelation on (TRole.roleId = TRelation.roleId) where TRole.roleId = #{roleId} order by TRelation.jurisdictionId
+	</select>
+	
+	<select id="findRoleAll"  resultMap="roleMap">
+		    select * from  TRole left join TRelation on TRole.roleId = TRelation.roleId 
+	</select>
+	
+	
+	<select id="getCount" parameterType="com.model.pojo.Role"  
+    resultType="int">  
+    select count(1) from TRole  
+    <where> 
+        <if test="roleName != null and !roleName.equals('')">  
+            and roleName like CONCAT(CONCAT('%',#{roleName}),'%')    
+        </if>  
+    </where>  
+	</select>  
+	
+	<select id="getList" parameterType="com.utils.SearchPageUtil" resultType="list"  
+    resultMap="roleResultMap">  
+    select * from (select a.*, rowNum rn from (select * from TRole
+    <where>  
+        <if test="object !=null and !object.roleName.equals('')">  
+            and roleName like CONCAT(CONCAT('%',#{object.roleName}),'%')  
+        </if>  
+    </where> 
+     ) a where rowNum &lt;= #{startRow}+#{pageSize})
+               where rn > #{startRow} 
+    </select>  
+	
+	
+	
+</mapper>

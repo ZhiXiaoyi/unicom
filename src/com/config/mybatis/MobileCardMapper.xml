@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.MobileCardMapper">
+
+	<select id="findMobileCardByPhoneNumber" resultType="com.model.pojo.MobileCard"
+		parameterType="java.lang.Long">
+		select *
+		from TMobileCard where
+		phoneNumber=#{phoneNumber}
+	</select>
+
+	<select id="findMobileCardByUserId" resultType="com.model.pojo.MobileCard"
+		parameterType="java.lang.Integer">
+		select *
+		from TMobileCard where
+		userId=#{userId}
+	</select>
+
+	<insert id="addMobileCard" parameterType="com.model.pojo.MobileCard">
+
+		INSERT INTO TMOBILECARD
+		(MOBILECARDID, PACKAGEID,
+		USERID,PHONENUMBER,SERVICEPWD,
+		COSTBALANCE,REMAININGSCORE,
+		REALNAME,IDCARD,ATTRIBUTION,NUMBERPRICE,APPLICATIONSTATE)
+		VALUES
+		(seqMobileCardId.nextval,
+		#{userId},#{packageId},#{phoneNumber},#{servicePwd},
+		#{costBalance},#{remainingScore},#{realName},#{idCard},#{attribution},#{numberPrice},#{applicationState});
+	</insert>
+	<update id="updateMobileCardUserId">
+		update TMobileCard set
+		userId=#{userId}
+		where phoneNumber=#{phoneNumber}
+
+	</update>
+	<!-- 查询积分 -->
+	<select id="findNowRemainingScore" resultType="java.lang.Integer"
+		parameterType="java.lang.Long">
+		select REMAININGSCORE from TMobileCard where
+		phoneNumber=#{phoneNumber}
+	</select>
+
+
+	<update id="updateMobileCardRemainingScore">
+		update TMobileCard set
+		remainingScore=#{remainingScore}
+		where userId=#{userId}
+	</update>
+
+	<select id="findMobileCardByPhoneNumberAndIdCard" resultType="com.model.pojo.MobileCard">
+		select *
+		from TMobileCard where
+		phoneNumber=#{phoneNumber} and idCard=#{idCard}
+	</select>
+</mapper>

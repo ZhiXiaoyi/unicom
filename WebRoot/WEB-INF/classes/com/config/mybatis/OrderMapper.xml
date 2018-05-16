@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.OrderMapper">
+	<resultMap type="com.model.pojo.Order" id="OrderResultMap">  
+        <result property="orderId" column="orderId" />  
+        <result property="commodityNumber" column="commodityNumber" />  
+        <result property="harvestAddressInfoId" column="harvestAddressInfoId" />  
+        <result property="userId" column="userId" />          
+        <result property="orderMoney" column="orderMoney" />  
+        <result property="placeOrderTime" column="placeOrderTime"  />  
+        <result property="cancerOrderTime" column="cancerOrderTime" />  
+        <result property="paymentTime" column="paymentTime" />   
+        <result property="orderState" column="orderState" />  
+        <result property="paymentMode" column="paymentMode" />  
+        <result property="shippingMode" column="shippingMode" />  
+        <result property="whetherInvoice" column="whetherInvoice" />          
+        
+        <association property="user" column="userId"
+			javaType="com.model.pojo.User" select="selectUser">
+		</association>
+		<association property="commodity" column="commodityNumber"
+			javaType="com.model.pojo.Commodity" select="selectCommodity">
+		</association>
+		<association property="harvestAddressInfo" column="harvestAddressInfoId"
+			javaType="com.model.pojo.HarvestAddressInfo" select="selectHarvestAddressInfo">
+		</association>
+    </resultMap>  
+   
+    <!-- 关联角色-->
+	<select id="selectUser" parameterType="java.lang.Integer"
+		resultType="com.model.pojo.User">
+		select * from TUser where userId = #{id}
+	</select>
+	<select id="selectCommodity" parameterType="java.lang.Integer"
+		resultType="com.model.pojo.Commodity">
+		select * from TCommodity where commodityNumber = #{id}
+	</select>
+	<select id="selectHarvestAddressInfo" parameterType="java.lang.Integer"
+		resultType="com.model.pojo.HarvestAddressInfo">
+		select * from THarvestAddressInfo where harvestAddressInfoId = #{id}
+	</select>
+	
+	<insert  id="addOrder" parameterType="com.model.pojo.Order">
+			<selectKey keyProperty="orderId" order="BEFORE" resultType="java.lang.Integer">
+				select order_seq.nextval as orderId from dual
+			</selectKey>
+			insert into TOrders  values(
+			#{orderId},
+			#{commodityNumber,jdbcType=INTEGER},
+			#{harvestAddressInfoId,jdbcType=INTEGER},
+			#{userId,jdbcType=INTEGER},
+			#{orderMoney,jdbcType=DOUBLE},
+			to_date(#{placeOrderTime,jdbcType=VARCHAR},'yyyy-mm-dd hh24:mi:ss'),
+		    null,
+			to_date(#{paymentTime,jdbcType=VARCHAR},'yyyy-mm-dd hh24:mi:ss'),
+			#{orderState,jdbcType=VARCHAR},
+			#{paymentMode,jdbcType=VARCHAR},
+			#{shippingMode,jdbcType=VARCHAR},
+			#{whetherInvoice,jdbcType=VARCHAR}
+			)
+    </insert>
+  
+	<select id="getCount" parameterType="com.model.pojo.Order"  
+    resultType="int">  
+    select count(1) from TOrders  
+    <where> 
+        <if test="orderState != null and !orderState.equals('')">  
+            and orderState like CONCAT(CONCAT('%',#{orderState}),'%')    
+        </if>  
+         <if test="userId !=null" >  
+            and userId  = #{userId}
+        </if>  
+        <if test="commodity !=null and  !commodity.commodityType==0">  
+            and commodityNumber in (select commodityNumber from TCommodity where commodityType = #{commodity.commodityType}) 
+        </if>   
+    </where>  
+	</select>  
+	
+	<select id="findOrderById" parameterType="Integer" resultType="com.model.pojo.Order"  
+    resultMap="OrderResultMap">  
+      select *  from TOrders where orderId = #{orderId}
+    </select>  
+	
+	
+	<select id="getList" parameterType="com.utils.SearchPageUtil" resultType="list"  
+    resultMap="OrderResultMap">  
+    select * from (select a.*, rowNum rn from (select *  from TOrders 
+    <where>  
+        <if test="object !=null and object.orderState !=null and !object.orderState.equals('')">  
+            and orderState like CONCAT(CONCAT('%',#{object.orderState}),'%')  
+        </if> 
+         <if test="object !=null and object.userId !=null" >  
+            and userId  = #{object.userId}
+        </if>
+        <if test="object !=null and object.commodity !=null and !object.commodity.commodityType==0">  
+            and commodityNumber in (select commodityNumber from TCommodity where commodityType = #{object.commodity.commodityType}) 
+        </if>   
+    </where> 
+     ) a where rowNum &lt;= #{startRow}+#{pageSize})
+               where rn > #{startRow} 
+    </select>  
+    
+    
+    <update id="updateOrderState" >
+        update TOrders set
+        <if test="type==1">  
+              orderState='已通过'
+        </if>  
+        <if test="type==2">  
+              orderState='未通过'
+        </if> 
+        <if test="type==3">  
+              orderState='已发货'
+        </if> 
+        where orderId=#{orderId}
+    </update>
+</mapper>

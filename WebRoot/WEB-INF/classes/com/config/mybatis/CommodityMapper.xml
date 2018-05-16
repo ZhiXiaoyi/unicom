@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.CommodityMapper">
+
+
+	<resultMap type="com.model.pojo.Commodity" id="commodityResultMap">  
+        <result property="commodityNumber" column="commodityNumber" />  
+        <result property="commodityName" column="commodityName" />  
+        <result property="commodityPrice" column="commodityPrice" />  
+        <result property="commodityIntegral" column="commodityIntegral" />  
+        <result property="commodityImgPath" column="commodityImgPath" />  
+        <result property="commodityInfo" column="commodityInfo" />  
+        <result property="commodityStock" column="commodityStock" />  
+        <result property="commodityType" column="commodityType" />  
+        
+    </resultMap>  
+    
+	<select id="selectonecommodity" resultType="com.model.pojo.Commodity"
+		parameterType="com.model.pojo.Commodity">
+		select * from TCommodity 
+		<where>
+			<if test="commodityNumber!=null"> and commodityNumber=#{commodityNumber}</if>
+			<if test="orderId!=null"> and orderId=#{orderId}</if>
+			<if test="commodityName!=null"> and commodityName=#{commodityName}</if>
+			<if test="commodityPrice!=null"> and commodityPrice=#{commodityPrice}</if>
+			<if test="commodityIntegral!=null"> and commodityIntegral=#{commodityIntegral}</if>
+			<if test="commodityImgPath!=null"> and commodityImgPath=#{commodityImgPath}</if>
+			<if test="commodityInfo!=null"> and commodityInfo=#{commodityInfo}</if>
+			<if test="commodityStock!=null"> and commodityStock=#{commodityStock}</if>
+			<if test="commodityType!=null"> and commodityType=#{commodityType}</if>
+		</where>
+	</select>
+	
+	
+	<insert  id="addCommodity" parameterType="com.model.pojo.Commodity">
+		<selectKey keyProperty="commodityNumber" order="BEFORE" resultType="java.lang.Integer">
+			select commodity_seq.nextval from dual
+		</selectKey>
+		insert into TCommodity  values(
+		#{commodityNumber},
+		#{commodityName,jdbcType=VARCHAR},
+		#{commodityPrice,jdbcType=BIGINT},
+		#{commodityIntegral,jdbcType=INTEGER},
+		#{commodityImgPath,jdbcType=VARCHAR},
+		#{commodityInfo,jdbcType=VARCHAR},
+		#{commodityStock,jdbcType=VARCHAR},
+		#{commodityType,jdbcType=VARCHAR}
+		)
+	</insert>
+	
+	<delete id="delCommodity" parameterType="Integer"> 
+      delete from TCommodity where commodityNumber=#{commodityNumber} 
+    </delete> 
+	
+	
+	<select id="findCommodityById" resultType="com.model.pojo.Commodity"
+		parameterType="Integer"  resultMap="commodityResultMap"> 
+		select *
+		from TCommodity where
+		commodityNumber=#{commodityNumber}
+	</select>
+	
+	<update id="updateCommodity" parameterType="com.model.pojo.Commodity">
+        update TCommodity set
+        commodityName=#{commodityName,jdbcType=VARCHAR},
+        commodityPrice=#{commodityPrice,jdbcType=BIGINT},
+        commodityIntegral=#{commodityIntegral,jdbcType=INTEGER},
+        commodityStock=#{commodityStock,jdbcType=INTEGER},
+        commodityType=#{commodityType,jdbcType=INTEGER}, 
+        commodityInfo=#{commodityInfo,jdbcType=VARCHAR} 
+        where commodityNumber=#{commodityNumber}
+    </update>
+	
+	
+	<update id="updateCommodityStock" >
+        update TCommodity set
+        commodityStock=#{commodityStock}
+        where commodityNumber=#{commodityNumber}
+    </update>
+    
+	
+	<select id="getCount" parameterType="com.model.pojo.Commodity"  
+    resultType="int">  
+    select count(1) from TCommodity  
+    <where> 
+        <if test="commodityName != null and !commodityName.equals('')">  
+            and commodityName like CONCAT(CONCAT('%',#{commodityName}),'%')    
+        </if>  
+        <if test="commodityType != null and !commodityType==0">  
+            and commodityType =#{commodityType}   
+        </if>  
+    </where>  
+	</select>  
+	
+	<select id="getList" parameterType="com.utils.SearchPageUtil" resultType="list"  
+    resultMap="commodityResultMap">  
+    select * from (select a.*, rowNum rn from (select * from TCommodity
+    <where>  
+        <if test="object !=null and object.commodityName != null and !object.commodityName.equals('')">  
+            and commodityName like CONCAT(CONCAT('%',#{object.commodityName}),'%')    
+        </if>  
+        <if test="object !=null and object.commodityType != null and !object.commodityType==0">  
+            and commodityType =#{object.commodityType}   
+        </if>  
+        <if test="object !=null and object.searchCondition != null and object.searchCondition.from !=null">  
+            and commodityIntegral >= #{object.searchCondition.from}   
+        </if> 
+        <if test="object !=null and object.searchCondition != null and object.searchCondition.to !=null ">  
+            and commodityIntegral &lt;= #{object.searchCondition.to}   
+        </if> 
+    </where> 
+     ) a where rowNum &lt;= #{startRow}+#{pageSize})
+               where rn > #{startRow} 
+    </select>  
+	
+	
+</mapper>

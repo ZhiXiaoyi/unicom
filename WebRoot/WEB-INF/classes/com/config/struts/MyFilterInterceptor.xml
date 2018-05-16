@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="site" extends="struts-default" namespace="/site">
+		<interceptors>
+			<!-- 定义了一个名为authority的拦截器 -->
+			<interceptor name="authority" class="com.web.intercepts.MyFilterInterceptor" /> <!--上面自定义的拦截器类 -->
+			<interceptor-stack name="myDefault">
+				<interceptor-ref name="authority"> <!-- 引用拦截器 -->
+					<param name="includeMethods">getALL,getPart,listUser</param> <!-- 设置需要拦截的方法，多个以逗号隔开 -->
+				</interceptor-ref>
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="myDefault"></default-interceptor-ref>
+
+		<!-- 全局 -->
+		<global-results>
+			<!-- 当返回login视图名时，转入/login.jsp页面 -->
+			<result name="login">/login.jsp</result>
+		</global-results>
+
+	</package>
+</struts>

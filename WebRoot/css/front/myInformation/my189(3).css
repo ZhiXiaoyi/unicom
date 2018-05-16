@@ -1,0 +1,47 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+    border: 0 none;
+    font-family: "Î¢ÈíÑÅºÚ","ËÎÌå",Arial,Helvetica,sans-serif;
+    font-size: 14px;
+    font-style: inherit;
+    font-weight: inherit;
+    margin: 0;
+    outline: 0 none;
+    padding: 0;
+	text-align:center
+    vertical-align: baseline;
+}
+li{list-style-type:none}
+.content{ width:1200px; margin:0 auto; position:relative;}
+.left{ float:left;}
+.right{ float:right;}
+a{color:#6a6868;
+text-decoration:none;
+
+}
+/* CSS Document */
+.clearfix:after { visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0; }
+* html .clearfix { zoom: 1; }
+/* IE6 */
+*:first-child + html .clearfix { zoom: 1; }
+
+/*ÎÒµÄÏÖ×´¸Ä°æ*/
+.xzbottom{ width:956px; margin: 0 auto;border-right:1px solid #e9e9e9; margin-top:40px; background:#fff;}
+.xzbottom li{ width:238px; border:1px solid #e9e9e9; border-right:none; float:left;}
+.xzbottom li .pic{ float:left; margin-right:5px;}
+.xzbottom li p{ color:#ff8202; font-weight:bold; margin-top:55px;font-family:"Î¢ÈíÑÅºÚ",Arial, Helvetica, sans-serif;}
+.xzbottom li p span{ font-size:18px; font-weight:normal;}
+.xzbottom li a{ font-size:12px; color:#ff8202; line-height:36px;}
+
+.usrr_sign { padding: 25px 0 0 15px; background:#fff}
+.term-pre{ display:block; float:left; width:24px; height:55px;background:url(../../../images/front/myInformation/pre.png) no-repeat left center; margin-right:10px; margin-top:40px;}
+.term-next{ display:block; float:right;width:24px; height:55px;background:url(../../../images/front/myInformation/next.png) no-repeat left center; margin-left:10px; margin-top:40px;}
+.term{ text-align:center;width:2000px; position:absolute;left:0px;}
+.term p{font: normal 12px/25px "Microsoft Yahei"; color:#333333;}
+.term li{ float:left; margin:0 5px; width:60px;}
+.term li img{ height:36px;}
+.term .term-con a{margin-bottom:15px;display:block;}
+.term .term-con a{ }
+a.agrayleft{cursor:default;}
+a.agrayright{cursor:default;}
+.usrr_signimg{ float:left;width:284px; height:152px; overflow:hidden; position:relative;}
+.usrr_sign p {height:25px;}

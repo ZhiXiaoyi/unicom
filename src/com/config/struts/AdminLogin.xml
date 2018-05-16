@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+	<package name="login" namespace="/login" extends="struts-default">
+		<action name="tologin" class="com.web.action.AdminLoginAction" method="execute">	
+	        <result name="success" type="redirect">
+				/webadmin.jsp
+            </result>    
+            <result name="error">
+				/backLogin.jsp
+            </result>
+		</action>
+		<action name="outLogin" class="com.web.action.AdminLoginAction" method="outLogin">
+			<result name="success">
+				/backLogin.jsp
+			</result>
+		</action>	
+	</package>
+
+</struts>
